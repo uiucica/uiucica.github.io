@@ -105,6 +105,12 @@
             padding-bottom: 0.25rem;
         }
 
+        section h3 {
+            color: var(--illini-blue);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
         /* Events Section */
         .event-card {
             background: var(--bg-light);
@@ -117,6 +123,7 @@
         .event-card h3 {
             color: var(--illini-blue);
             font-size: 1.15rem;
+            margin: 0;
         }
 
         .event-date {
@@ -146,6 +153,7 @@
         .member-card h3 {
             color: var(--illini-blue);
             font-size: 1.05rem;
+            margin: 0;
         }
 
         .member-role {
@@ -158,6 +166,70 @@
         .member-card p {
             font-size: 0.85rem;
             color: #718096;
+        }
+
+        /* Resources Links List */
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .link-list li {
+            margin-bottom: 0.5rem;
+            background: var(--bg-light);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .link-list a {
+            color: var(--illini-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link-list a:hover {
+            color: var(--illini-orange);
+            text-decoration: underline;
+        }
+
+        /* Grocery Cards Grid */
+        .grocery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .grocery-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 6px;
+        }
+
+        .grocery-region {
+            display: inline-block;
+            background-color: var(--illini-orange);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .grocery-card h4 {
+            color: var(--illini-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .grocery-card p {
+            font-size: 0.9rem;
+            color: #4a5568;
         }
 
         /* Join Us / Contact Details */
@@ -218,6 +290,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#members">Members</a></li>
+            <li><a href="#resources">Resources</a></li>
             <li><a href="#join">Join Us</a></li>
         </ul>
     </nav>
@@ -301,6 +374,60 @@
         </div>
     </section>
 
+    <!-- Resources Section -->
+    <section id="resources">
+        <h2>Resources</h2>
+
+        <h3>Campus & Academic Links</h3>
+        <ul class="link-list">
+            <li>
+                <a href="https://isss.illinois.edu/" target="_blank" rel="noopener">International Student & Scholar Services (ISSS)</a>
+                <p>Visa advising, travel information, and cultural programs.</p>
+            </li>
+            <li>
+                <a href="https://grad.illinois.edu/" target="_blank" rel="noopener">UIUC Graduate College</a>
+                <p>Academic policies, fellowship databases, and career development.</p>
+            </li>
+            <li>
+                <a href="https://chemistry.illinois.edu/" target="_blank" rel="noopener">UIUC Department of Chemistry</a>
+                <p>Departmental news, directories, and course resources.</p>
+            </li>
+            <li>
+                <a href="https://mckinley.illinois.edu/" target="_blank" rel="noopener">McKinley Health Center</a>
+                <p>On-campus healthcare services, pharmacy, and wellness support.</p>
+            </li>
+        </ul>
+
+        <h3>Grocery Buying Guide</h3>
+        <p>A list of international and specialty grocery stores in the Champaign-Urbana area:</p>
+
+        <div class="grocery-grid">
+            <div class="grocery-card">
+                <span class="grocery-region">East & Southeast Asia</span>
+                <h4>Fresh International Market</h4>
+                <p><strong>Address:</strong> 505 E Green St, Champaign, IL 61820</p>
+            </div>
+
+            <div class="grocery-card">
+                <span class="grocery-region">South Asia</span>
+                <h4>Bombay Market</h4>
+                <p><strong>Address:</strong> 1726 S Philo Rd, Urbana, IL 61802</p>
+            </div>
+
+            <div class="grocery-card">
+                <span class="grocery-region">Middle East & Mediterranean</span>
+                <h4>Jerusalem Middle Eastern Market</h4>
+                <p><strong>Address:</strong> 505 S Wright St, Champaign, IL 61820</p>
+            </div>
+
+            <div class="grocery-card">
+                <span class="grocery-region">Latin America</span>
+                <h4>El Progreso Tienda</h4>
+                <p><strong>Address:</strong> 1017 W Bloomington Rd, Champaign, IL 61821</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Join Us Section -->
     <section id="join">
         <h2>Join Us</h2>
@@ -309,7 +436,7 @@
             
             <div class="contact-info">
                 <p><strong>President:</strong> Omkar Chaudhari</p>
-                <p><strong>Contact Email:</strong> <a href="mailto:ogc3@illinois.edu">ogc3@illinois.edu</a></p>
+                <p><strong>Contact Email:</strong> <a href="mailto:ica-board@illinois.edu">ica-board@illinois.edu</a></p>
                 <p><strong>Location:</strong> Noyes Laboratory, 505 S. Mathews Ave, Urbana, IL 61801</p>
             </div>
         </div>
