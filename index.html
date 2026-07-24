@@ -1,12 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Site</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Chemists Association | UIUC</title>
+    <style>
+        /* UIUC Color Theme */
+        :root {
+            --illini-blue: #13294B;
+            --illini-orange: #E84A27;
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3748;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Sticky Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--illini-blue);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--illini-orange);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--illini-orange);
+        }
+
+        /* Header / Banner */
+        header.hero {
+            background-color: var(--bg-light);
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-bottom: 4px solid var(--illini-orange);
+        }
+
+        .hero h1 {
+            color: var(--illini-blue);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        /* Content Sections */
+        section {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            color: var(--illini-blue);
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            display: inline-block;
+            border-bottom: 3px solid var(--illini-orange);
+            padding-bottom: 0.25rem;
+        }
+
+        /* Events Section */
+        .event-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--illini-blue);
+            padding: 1.25rem;
+            margin-top: 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .event-card h3 {
+            color: var(--illini-blue);
+            font-size: 1.15rem;
+        }
+
+        .event-date {
+            color: var(--illini-orange);
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Members Grid */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .member-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .member-card h3 {
+            color: var(--illini-blue);
+            font-size: 1.1rem;
+        }
+
+        .member-role {
+            color: var(--illini-orange);
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-card p {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        /* Join Us Box */
+        .join-box {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--illini-orange);
+            color: #ffffff;
+            padding: 0.6rem 1.25rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d03b1a;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background-color: var(--illini-blue);
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello</h1>
+
+    <!-- Sticky Navigation -->
+    <nav>
+        <a href="#" class="logo">ICA <span>@ Illinois</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#join">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header / Title -->
+    <header class="hero">
+        <h1>International Chemists Association</h1>
+        <p>Department of Chemistry • University of Illinois Urbana-Champaign</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About ICA</h2>
+        <p>
+            The International Chemists Association (ICA) at Illinois supports the well-being of international graduate students and scholars in the Department of Chemistry. We promote intercultural dialogue, connect members with campus resources, and build an inclusive community for chemistry researchers.
+        </p>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <h2>Events</h2>
+
+        <div class="event-card">
+            <div class="event-date">Upcoming • Coffee & Conversation</div>
+            <h3>Welcome Social & Coffee Hour</h3>
+            <p>Noyes Laboratory Atrium. Meet fellow international students and faculty over light refreshments.</p>
+        </div>
+
+        <div class="event-card">
+            <div class="event-date">Upcoming • Workshop</div>
+            <h3>Navigating Academic & Industry Careers</h3>
+            <p>A roundtable discussion with senior PhD candidates and alumni sharing insights on career opportunities.</p>
+        </div>
+
+        <div class="event-card">
+            <div class="event-date">Past Event • Gathering</div>
+            <h3>Cultural Exchange Potluck</h3>
+            <p>A casual gathering bringing together department members to share traditional dishes from around the world.</p>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members">
+        <h2>Executive Board</h2>
+        <div class="member-grid">
+            <div class="member-card">
+                <h3>Executive Chair</h3>
+                <div class="member-role">President</div>
+                <p>PhD Candidate, Chemistry</p>
+            </div>
+            <div class="member-card">
+                <h3>Vice Chair</h3>
+                <div class="member-role">Vice President</div>
+                <p>PhD Candidate, Chemistry</p>
+            </div>
+            <div class="member-card">
+                <h3>Event Coordinator</h3>
+                <div class="member-role">Social Director</div>
+                <p>PhD Student, Chemistry</p>
+            </div>
+            <div class="member-card">
+                <h3>Treasurer</h3>
+                <div class="member-role">Finance Chair</div>
+                <p>PhD Student, Chemistry</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join">
+        <h2>Join Us</h2>
+        <div class="join-box">
+            <p>Membership is open to all graduate students, postdocs, and researchers in the Department of Chemistry. Join our mailing list to stay updated on upcoming events and meetings.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Location:</strong> Noyes Laboratory, 505 S. Mathews Ave, Urbana, IL 61801</p>
+            
+            <a href="mailto:chemistry@illinois.edu?subject=ICA%20Membership%20Inquiry" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; International Chemists Association. Department of Chemistry, University of Illinois Urbana-Champaign.</p>
+    </footer>
+
 </body>
 </html>
