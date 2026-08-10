@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Grocery Guide | ICA at UIUC</title>
+<style>
+:root {
+  --illini-blue:#13294B;
+  --illini-orange:#E84A27;
+  --bg:#f8f9fa;
+  --text:#2d3748;
+  --muted:#667085;
+  --line:#d9e0e8;
+  --warn:#fff5f0;
+  --warn-border:#E84A27;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; color:var(--text); background:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+}
+nav {
+  position:sticky; top:0; z-index:100; background:var(--illini-blue);
+  color:#fff; padding:.85rem 1.5rem; display:flex; justify-content:space-between;
+  align-items:center; gap:1rem; box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+.logo { color:#fff; text-decoration:none; font-weight:750; }
+.logo span { color:var(--illini-orange); }
+.nav-links { display:flex; flex-wrap:wrap; gap:1rem; list-style:none; margin:0; padding:0; }
+.nav-links a { color:#fff; text-decoration:none; font-size:.92rem; font-weight:600; }
+.nav-links a:hover { color:var(--illini-orange); }
+.hero {
+  background:linear-gradient(180deg,#f7f9fc,#fff); border-bottom:4px solid var(--illini-orange);
+  padding:4rem 1.5rem 3rem; text-align:center;
+}
+.hero h1 { margin:0 auto .7rem; max-width:950px; color:var(--illini-blue); font-size:clamp(2rem,5vw,3.2rem); line-height:1.12; }
+.hero .subtitle { max-width:850px; margin:0 auto; font-size:1.08rem; color:#4a5568; }
+.meta { margin-top:1.25rem; color:var(--muted); font-size:.92rem; }
+.actions { margin-top:1.4rem; display:flex; justify-content:center; gap:.8rem; flex-wrap:wrap; }
+.btn {
+  display:inline-block; border-radius:6px; padding:.65rem .9rem; text-decoration:none; font-weight:700;
+  border:1px solid var(--illini-blue);
+}
+.btn.primary { background:var(--illini-blue); color:#fff; }
+.btn.secondary { color:var(--illini-blue); background:#fff; }
+.layout { max-width:1180px; margin:0 auto; padding:2rem 1.25rem 4rem; display:grid; grid-template-columns:260px minmax(0,1fr); gap:2rem; }
+.toc {
+  position:sticky; top:78px; align-self:start; border:1px solid var(--line); border-radius:8px;
+  padding:1rem; background:var(--bg); max-height:calc(100vh - 100px); overflow:auto;
+}
+.toc h2 { margin:.1rem 0 .65rem; color:var(--illini-blue); font-size:1.05rem; }
+.toc a { display:block; padding:.28rem 0; color:var(--illini-blue); text-decoration:none; font-size:.9rem; }
+.toc a:hover { color:var(--illini-orange); text-decoration:underline; }
+main { min-width:0; }
+section { padding:1.4rem 0 2.6rem; border-bottom:1px solid var(--line); scroll-margin-top:75px; }
+section h2 { color:var(--illini-blue); font-size:1.75rem; margin:.25rem 0 1rem; border-bottom:3px solid var(--illini-orange); padding-bottom:.35rem; }
+h3.subsection { color:var(--illini-blue); margin:1.8rem 0 .8rem; }
+.notice {
+  border-left:4px solid var(--illini-orange); background:#fff7f3; padding:1rem 1.1rem; margin:1rem 0;
+}
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:7px; margin:1rem 0; }
+table { border-collapse:collapse; width:100%; min-width:720px; font-size:.92rem; }
+th { background:var(--illini-blue); color:#fff; text-align:left; padding:.65rem .7rem; vertical-align:top; }
+td { padding:.65rem .7rem; border-top:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) { background:#f7f9fb; }
+.store-card { border:1px solid var(--line); border-radius:8px; margin:.75rem 0; overflow:hidden; background:#fff; }
+.store-card summary {
+  cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:1rem; align-items:center;
+  padding:.9rem 1rem; font-weight:750; color:var(--illini-blue); background:#f9fafb;
+}
+.store-card summary::-webkit-details-marker { display:none; }
+.store-card summary::after { content:"+"; color:var(--illini-orange); font-size:1.25rem; }
+.store-card[open] summary::after { content:"−"; }
+.summary-meta { color:var(--muted); font-weight:600; font-size:.86rem; }
+.store-body { padding:1rem; }
+.store-body p { margin:.75rem 0; }
+.facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-bottom:1rem; }
+.facts div { display:grid; grid-template-columns:90px 1fr; gap:.5rem; padding:.55rem .7rem; border-bottom:1px solid var(--line); }
+.facts div:nth-last-child(-n+2) { border-bottom:0; }
+.facts strong { color:var(--illini-blue); }
+.warning { background:var(--warn); border-left:4px solid var(--warn-border); padding:.75rem .9rem; font-weight:600; }
+.small { color:var(--muted); font-size:.9rem; }
+ul.tight { padding-left:1.2rem; }
+ul.tight li { margin:.45rem 0; }
+footer { background:var(--illini-blue); color:#fff; text-align:center; padding:2rem 1.5rem; font-size:.88rem; }
+@media (max-width:900px) {
+  .layout { grid-template-columns:1fr; }
+  .toc { position:relative; top:auto; max-height:none; }
+}
+@media (max-width:650px) {
+  nav { align-items:flex-start; flex-direction:column; }
+  .nav-links { gap:.75rem; }
+  .hero { padding:3rem 1rem 2.4rem; }
+  .layout { padding:1.25rem .9rem 3rem; }
+  .facts { grid-template-columns:1fr; }
+  .facts div:nth-last-child(-n+2) { border-bottom:1px solid var(--line); }
+  .facts div:last-child { border-bottom:0; }
+  .summary-meta { display:none; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">ICA <span>@ Department of Chemistry, University of Illinois Urbana-Champaign</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#resources">Resources</a></li>
+    <li><a href="#directory">Store Directory</a></li>
+    <li><a href="#country">By Cuisine</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>International and Ethnic Grocery Retail in Champaign-Urbana, Illinois</h1>
+  <p class="subtitle">A sourcing directory organised by country and region of origin</p>
+  <p class="meta">Compiled 24 July 2026 · Coverage area: Champaign, Urbana and Savoy, Champaign County, Illinois · 19 independent international grocers and specialty food retailers, plus 10 chain and warehouse locations</p>
+  <div class="actions">
+    <a class="btn primary" href="#directory">Browse stores</a>
+    <a class="btn secondary" href="CU_International_Grocery_Report_2026.pdf">View original PDF</a>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="toc" aria-label="Guide contents">
+  <h2>Guide contents</h2>
+  <a href="#scope">1. Scope, Method and Limitations</a>
+  <a href="#directory">2. Directory at a Glance</a>
+  <a href="#profiles">3. Store Profiles</a>
+  <a href="#country">4. Country / Region Cross-Reference</a>
+  <a href="#chains">5. Chain, Big-Box and Warehouse Retailers</a>
+  <a href="#membership">6. Membership and Payment</a>
+  <a href="#gaps">7. Gaps in the Market</a>
+  <a href="#closed">8. Closed and Relocated</a>
+  <a href="#sources">9. Sources</a>
+</aside>
+
+<main>
+<section id="scope">
+  <h2>1. Scope, Method and Limitations</h2>
+  <p>This report catalogues food retailers in the Champaign-Urbana metropolitan area that stock groceries associated with specific national or regional cuisines, and maps those cuisines to the stores that carry them. Only businesses verified as operating as of 24 July 2026 are included in the directory. Businesses that have closed are listed separately in Section 8 so that stale directory entries elsewhere on the web can be discounted.</p>
+  <p><strong>Sources.</strong> Google Places business listings and customer reviews retrieved 24 July 2026; openings and closings coverage from Smile Politely (Champaign-Urbana's culture magazine); the ChambanaMoms international grocery roundup (last updated July 2025); the University of Illinois McKinley Health Center international grocery guide; and individual store websites.</p>
+  <p><strong>Limitations, stated plainly.</strong> Product attributions are derived from published store descriptions and customer reviews, not from a physical shelf audit. Independent grocers rotate stock heavily and a store described here as carrying a given cuisine will not carry every item from it. Two entries carry explicit status warnings. Trading hours are as published by the operators on 24 July 2026 and change without notice. Anyone travelling for a specific ingredient should telephone first.</p>
+</section>
+
+<section id="directory">
+  <h2>2. Directory at a Glance</h2>
+  <p>All independent international and specialty grocers verified as trading. Membership column answers the subscription question directly: none of the independent stores below require a paid membership of any kind.</p>
+  <div class="table-wrap"><table class=""><thead><tr><th>Store</th><th>Address</th><th>Primary origin focus</th><th>Rating</th><th>Membership</th></tr></thead><tbody><tr><td>H Mart Urbana</td><td>220 N Broadway Ave, Urbana 61801</td><td>Korea; pan-East and Southeast Asia</td><td>4.5 (445)</td><td>None</td></tr><tr><td>Fresh International Market</td><td>505 S Neil St, Ste 4-7, Champaign 61820</td><td>China, Taiwan, Hong Kong; pan-Asian</td><td>4.4 (903)</td><td>None</td></tr><tr><td>Asian Supermarket (Prospect)</td><td>1215 N Prospect Ave, Champaign 61820</td><td>China, Vietnam, Thailand, Korea</td><td>4.3 (420)</td><td>None</td></tr><tr><td>Asian Supermarket (First St)</td><td>505 S 1st St, Champaign 61820</td><td>China, Japan, Korea - pantry and kitchenware</td><td>New (2026)</td><td>None</td></tr><tr><td>Far East Grocery</td><td>105 S 5th St, Champaign 61820</td><td>Vietnam, China, Japan, Indonesia</td><td>4.4 (245)</td><td>None</td></tr><tr><td>World Harvest Intl. & Gourmet</td><td>306 W Springfield Ave, Urbana 61801</td><td>Middle East, Mediterranean, broad international</td><td>4.4 (314)</td><td>None</td></tr><tr><td>Bombay Market</td><td>105 N 2nd St, Champaign 61820</td><td>India, Pakistan, Nepal; Middle East, Africa</td><td>4.4 (230)</td><td>None</td></tr><tr><td>Annapoorna Stores</td><td>505 S Neil St, Ste 11, Champaign 61820</td><td>India (South Indian emphasis)</td><td>4.2 (399)</td><td>None</td></tr><tr><td>Desi Bazaar</td><td>1726 W Bradley Ave, Champaign 61821</td><td>India, Pakistan; DR Congo and Central Africa</td><td>5.0 (18)</td><td>None</td></tr><tr><td>Mirsung</td><td>49 E Green St, Champaign 61820</td><td>India, Pakistan, Bangladesh</td><td>3.9 (42)</td><td>None</td></tr><tr><td>Ashar African Market</td><td>510 N Cunningham Ave, Urbana 61802</td><td>Nigeria and West Africa</td><td>4.4 (39)</td><td>None</td></tr><tr><td>Maligaya's Oriental Market</td><td>1006 Anthony Dr, Ste B, Champaign 61821</td><td>Philippines</td><td>4.6 (65)</td><td>None</td></tr><tr><td>Ebisu Japanese Life Store</td><td>524 E Green St, Ste 101, Champaign 61820</td><td>Japan (snacks, confectionery, household)</td><td>4.5 (27)</td><td>None</td></tr><tr><td>Signature Meats</td><td>134 E University Ave, Unit 102, Champaign 61820</td><td>Zabiha halal butchery and fish</td><td>4.8 (38)</td><td>None</td></tr><tr><td>El Progreso</td><td>1302 N Cunningham Ave, Urbana 61802</td><td>Mexico</td><td>4.4 (287)</td><td>None</td></tr><tr><td>El Progreso Latino</td><td>1017½ W Bloomington Rd, Champaign 61821</td><td>Mexico</td><td>4.5 (82)</td><td>None</td></tr><tr><td>Los Paisas</td><td>1102 N Prospect Ave, Ste B, Champaign 61820</td><td>Mexico, Colombia, Peru, Central America</td><td>4.4 (118)</td><td>None</td></tr><tr><td>Pablo's Tortillería y Abarrotes</td><td>31 E Marketview Dr, Champaign 61820</td><td>Mexico (in-house tortillería)</td><td>New (2026)</td><td>None</td></tr><tr><td>Best of Africa Food Store</td><td>1807 W Bradley Ave, Ste F, Champaign 61821</td><td>Central and West Africa - status unverified</td><td>5.0 (5)</td><td>None</td></tr></tbody></table></div>
+  <p class="small">Ratings are Google review averages with review counts in parentheses, retrieved 24 July 2026.</p>
+</section>
+
+<section id="profiles">
+  <h2>3. Store Profiles</h2>
+  <p class="small">Select a store to expand its full profile.</p>
+  <h3 class="subsection">3.1 East and Southeast Asian</h3>
+    <details class="store-card">
+      <summary>
+        <span>H Mart Urbana</span>
+        <span class="summary-meta">4.5 / 5 (445 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>220 N Broadway Ave, Urbana, IL 61801</span></div>
+          <div><strong>Telephone</strong><span>(217) 866-9455</span></div>
+          <div><strong>Hours</strong><span>Daily 8:00-22:00</span></div>
+          <div><strong>Rating</strong><span>4.5 / 5 (445 reviews)</span></div>
+        </div>
+        <p>The largest Asian supermarket in the metropolitan area and the only national-chain Asian grocer between Chicago and St Louis. Opened January 2025. Korean-anchored but genuinely pan-Asian: extensive fresh and live seafood, butchered meats including thin-sliced barbecue cuts, Asian produce and tropical fruit, an enormous instant-noodle aisle, banchan, kimchi, prepared foods and housewares. An in-store food court houses Jaws TPK (Korean street food), Paik&#x27;s Noodle (Korean-Chinese), Cho Dang (Korean barbecue and tofu) and Paris Baguette (bakery).</p>
+        <p><strong>Cuisines stocked:</strong> Korea (primary), Japan, China, Taiwan, Vietnam, Thailand, Philippines.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Fresh International Market</span>
+        <span class="summary-meta">4.4 / 5 (903 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>505 S Neil St, Ste 4-7, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 607-1665</span></div>
+          <div><strong>Hours</strong><span>Mon-Thu and Sun 9:00-21:00; Fri-Sat 9:00-22:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (903 reviews)</span></div>
+        </div>
+        <p>The largest independent Asian supermarket in Champaign and the highest-traffic international grocer in the area by review volume. The store describes its own range as live seafood, fresh produce, a Taiwanese bakery counter and a Cantonese deli. Reviewers consistently note cleanliness and breadth of packaged goods; the fresh fruit selection is the most commonly criticised department. Sister store to the now-closed Green Onion Asian Market. Amazon parcel locker on site.</p>
+        <p><strong>Cuisines stocked:</strong> China (mainland, Cantonese and Sichuan), Taiwan, Hong Kong, Korea, Japan, Vietnam, Thailand, Philippines; some Indian and South Asian dry goods.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Asian Supermarket (Prospect Avenue)</span>
+        <span class="summary-meta">4.3 / 5 (420 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1215 N Prospect Ave, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 516-6666</span></div>
+          <div><strong>Hours</strong><span>Daily 10:00-21:00</span></div>
+          <div><strong>Rating</strong><span>4.3 / 5 (420 reviews)</span></div>
+        </div>
+        <p>A long-established north Champaign store, valued by reviewers for fresh herbs, Asian vegetables and fruit not carried by mainstream supermarkets, a fresh seafood counter, offal and thin-sliced meats, and house kimchi. Shelf pricing is reported to lag the register on occasion; check totals at checkout.</p>
+        <p><strong>Cuisines stocked:</strong> China, Vietnam, Thailand, Korea, Japan.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Asian Supermarket (First Street)</span>
+        <span class="summary-meta">Opened May 2026</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>505 S 1st St, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 516-6666 (listed)</span></div>
+          <div><strong>Hours</strong><span>Mon-Thu 12:00-21:00; Fri-Sun 9:00-21:00</span></div>
+          <div><strong>Rating</strong><span>Opened May 2026</span></div>
+        </div>
+        <p>A small campus-adjacent store beside Brothers Bar &amp; Grill, opened in May 2026 and covered by Smile Politely at opening. Stock is pantry-led rather than fresh: ramen and rice noodles, rice, flours, breadcrumbs, bottled oils, vinegars and sauces, juices and sodas, packaged snacks, plus a rear corner of kitchenware, glassware, chopsticks and sake cups. Also stocks soju and sake.</p>
+        <p><strong>Cuisines stocked:</strong> China, Japan, Korea, Taiwan.</p>
+        <p class="warning">Note: despite the shared name and a shared telephone number on the Google listing, local press treats this as a separate store from the Prospect Avenue Asian Supermarket. Confirm which location you are calling.</p>
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Far East Grocery</span>
+        <span class="summary-meta">4.4 / 5 (245 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>105 S 5th St, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 352-7137</span></div>
+          <div><strong>Hours</strong><span>Daily 10:00-19:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (245 reviews)</span></div>
+        </div>
+        <p>A family-run store set back from University Avenue, in operation for decades and specifically recommended by Vietnamese customers in reviews. Narrow aisles, dense stock, strong fresh vegetable range and staff who will carry purchases to the car. The most reliable local source for Vietnamese and Indonesian pantry items.</p>
+        <p><strong>Cuisines stocked:</strong> Vietnam (primary), China, Japan, Indonesia, Thailand, Philippines.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Maligaya&#x27;s Oriental Market</span>
+        <span class="summary-meta">4.6 / 5 (65 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1006 Anthony Dr, Ste B, Champaign, IL 61821</span></div>
+          <div><strong>Telephone</strong><span>(217) 352-2606</span></div>
+          <div><strong>Hours</strong><span>Mon-Sat 10:00-17:00; closed Sunday</span></div>
+          <div><strong>Rating</strong><span>4.6 / 5 (65 reviews)</span></div>
+        </div>
+        <p>The only dedicated Filipino grocer in the area, family-owned. Small footprint and a limited but targeted range: Filipino snacks and confectionery, sauces and condiments, frozen items and dry goods. Prices run higher than the larger Asian supermarkets. Shortest opening hours of any store in this report - note the 17:00 close and Sunday closure.</p>
+        <p><strong>Cuisines stocked:</strong> Philippines (primary); some other Southeast Asian lines.</p>
+        <p class="warning">Reported card minimum of $10. Carry cash for small purchases.</p>
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Ebisu Japanese Life Store</span>
+        <span class="summary-meta">4.5 / 5 (27 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>524 E Green St, Ste 101, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>Not listed</span></div>
+          <div><strong>Hours</strong><span>Daily 11:00-21:00</span></div>
+          <div><strong>Rating</strong><span>4.5 / 5 (27 reviews)</span></div>
+        </div>
+        <p>A Campustown Japanese variety store rather than a full grocer. Japanese snacks and confectionery, drinks, cosmetics, cleaning and household goods, stationery and collectibles. Useful for Japanese packaged foods and gifts within walking distance of campus; not a source for fresh ingredients. Reviewers note cramped aisles and high prices.</p>
+        <p><strong>Cuisines stocked:</strong> Japan.</p>
+        
+      </div>
+    </details><h3 class="subsection">3.2 South Asian</h3>
+    <details class="store-card">
+      <summary>
+        <span>Bombay Market</span>
+        <span class="summary-meta">4.4 / 5 (230 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>105 N 2nd St (at E University Ave), Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 552-1516</span></div>
+          <div><strong>Hours</strong><span>Mon-Sat 10:00-20:00; Sun 11:00-19:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (230 reviews)</span></div>
+        </div>
+        <p>The largest South Asian grocer in the area, relocated in late 2024 from West Bradley Avenue into a purpose-fitted space at University and 2nd. Full regional Indian range: fresh produce, packaged masalas, flours, pulses, basmati varieties, snacks, beverages, frozen goods and sweets. Includes a halal butcher counter and Mama&#x27;s Kitchen, an in-store Indian takeaway. Deliberately stocks for the local African and Middle Eastern communities as well; multiple reviewers describe it as the single best-stocked store in the area for Indian, Pakistani, Middle Eastern, Nepali and African goods.</p>
+        <p><strong>Cuisines stocked:</strong> India (all regions), Pakistan, Bangladesh, Nepal, Middle East, Sub-Saharan Africa.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Annapoorna Stores</span>
+        <span class="summary-meta">4.2 / 5 (399 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>505 S Neil St, Ste 11, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 355-5215</span></div>
+          <div><strong>Hours</strong><span>Mon-Sat 10:00-20:30; Sun 10:00-20:00</span></div>
+          <div><strong>Rating</strong><span>4.2 / 5 (399 reviews)</span></div>
+        </div>
+        <p>Trading since 2003 and the longest-established Indian grocer in Champaign-Urbana, in the same plaza as Fresh International Market. Comprehensive spice wall, pulses, flours, ready-to-eat and frozen meals, and Indian vegetables not carried by mainstream supermarkets. Fresh produce deliveries arrive weekly, traditionally Thursdays. Produce pricing draws consistent criticism; frozen-goods quality complaints appear in recent reviews.</p>
+        <p><strong>Cuisines stocked:</strong> India (South Indian emphasis), Sri Lanka.</p>
+        <p class="warning">Reported card minimum of $10.</p>
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Desi Bazaar Indian Grocery and Meat Store</span>
+        <span class="summary-meta">5.0 / 5 (18 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1726 W Bradley Ave, Champaign, IL 61821</span></div>
+          <div><strong>Telephone</strong><span>(217) 607-8139</span></div>
+          <div><strong>Hours</strong><span>Daily 10:00-20:00</span></div>
+          <div><strong>Rating</strong><span>5.0 / 5 (18 reviews)</span></div>
+        </div>
+        <p>Opened in 2025 in the space vacated by Bombay Market. Announced at launch as carrying African, Middle Eastern and Asian groceries and meat. Reviews confirm an unusually broad dual range: on the South Asian side, spices, lentils, basmati, bulk grains and beans, produce including okra and curry leaves, frozen breads, meals and desserts; on the Central African side, pondu, safou, palm oil, kwanga and kimpuka, ngai ngai, matambala, semolina in large and small bags, and Malta drinks. Fresh halal goat, beef and chicken, plus Thompson fish, black tilapia, makayabu and oxtail.</p>
+        <p><strong>Cuisines stocked:</strong> India, Pakistan, Bangladesh; Democratic Republic of the Congo and Central Africa; some Middle Eastern lines.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Mirsung</span>
+        <span class="summary-meta">3.9 / 5 (42 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>49 E Green St, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 344-2660</span></div>
+          <div><strong>Hours</strong><span>Listed 11:00-21:00 daily (Yelp); Google hours not published</span></div>
+          <div><strong>Rating</strong><span>3.9 / 5 (42 reviews)</span></div>
+        </div>
+        <p>The only dedicated South Asian grocer within Campustown, trading since 2009. Positioned on price and student convenience: a 10 per cent student discount on qualifying purchases and free delivery above a threshold. Inventory is smaller than Bombay Market or Annapoorna but covers the essential spices, dals, rice, flours, roti and snacks.</p>
+        <p><strong>Cuisines stocked:</strong> India, Pakistan, Bangladesh.</p>
+        <p class="warning">Multiple reviews report stock at or past its best-before date. Check dates before purchase. Google publishes no current hours; telephone to confirm before travelling.</p>
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Signature Meats, Halal Butcher Shop</span>
+        <span class="summary-meta">4.8 / 5 (38 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>134 E University Ave, Unit 102, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 350-5590</span></div>
+          <div><strong>Hours</strong><span>Tue-Thu 11:00-20:00; Fri-Sat 10:00-20:00; Sun 10:00-18:00; closed Monday</span></div>
+          <div><strong>Rating</strong><span>4.8 / 5 (38 reviews)</span></div>
+        </div>
+        <p>One of the few sources of zabiha hand-slaughtered halal meat in the area, and the highest-rated store in this report. Beef, lamb, goat and chicken cut to order, plus a fresh fish counter carrying king fish and other whole fish, and frozen Indian fish varieties. Extensive frozen range alongside the butchery.</p>
+        <p><strong>Cuisines stocked:</strong> Serves South Asian and Middle Eastern halal households; not a general grocer.</p>
+        <p class="warning">At least one detailed review disputes surcharges applied for cutting and cleaning fish. Confirm the total price including preparation before ordering.</p>
+      </div>
+    </details><h3 class="subsection">3.3 Middle Eastern, Mediterranean and Broad International</h3>
+    <details class="store-card">
+      <summary>
+        <span>World Harvest International &amp; Gourmet Foods</span>
+        <span class="summary-meta">4.4 / 5 (314 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>306 W Springfield Ave, Urbana, IL 61801</span></div>
+          <div><strong>Telephone</strong><span>(217) 356-4444</span></div>
+          <div><strong>Hours</strong><span>Mon-Sat 10:00-20:00; Sun 10:00-19:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (314 reviews)</span></div>
+        </div>
+        <p>The widest single-store international assortment in Champaign-Urbana, and the default answer for Middle Eastern and Mediterranean ingredients, which no other local store covers in depth. The business describes itself as the area&#x27;s first and finest international and gourmet food store, with more than ten thousand lines. Strengths are the olive and cheese counters, bulk olive oil dispensed to your own bottle, spices, herbal teas, nuts and dried fruit, and fresh dates arriving each August and September. The store now trades at the former Strawberry Fields site and has retained that business&#x27;s natural and organic grocery, bakery, made-fresh salads and sandwiches, coffee, supplements and body-care ranges alongside the international goods. A café operates on site.</p>
+        <p><strong>Cuisines stocked:</strong> Lebanon, Syria, Palestine, Jordan, Turkey, Greece, Iran, Egypt and North Africa; India and Pakistan; Southeast Asia; Eastern and Western Europe; Latin America.</p>
+        <p class="warning">Older directories list World Harvest at 519 E University Ave, Champaign. That address is out of date. The store is in Urbana.</p>
+      </div>
+    </details><h3 class="subsection">3.4 African</h3>
+    <details class="store-card">
+      <summary>
+        <span>Ashar African Market</span>
+        <span class="summary-meta">4.4 / 5 (39 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>510 N Cunningham Ave, Urbana, IL 61802</span></div>
+          <div><strong>Telephone</strong><span>(217) 607-5909</span></div>
+          <div><strong>Hours</strong><span>Mon-Sat 9:00-20:00; Sun 13:00-20:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (39 reviews)</span></div>
+        </div>
+        <p>A compact three-aisle West African grocer with a strong Nigerian focus, described by regular customers as the one-stop shop for African cooking in the area. Named items in reviews include garri ijebu, elubo for amala, ewedu, pepper sauces, plantains, catfish and goat meat for pepper soup. Also carries fresh produce.</p>
+        <p><strong>Cuisines stocked:</strong> Nigeria (primary), Ghana and West Africa broadly.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Best of Africa Food Store</span>
+        <span class="summary-meta">5.0 / 5 (5 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1807 W Bradley Ave, Ste F, Champaign, IL 61821</span></div>
+          <div><strong>Telephone</strong><span>(217) 552-1151</span></div>
+          <div><strong>Hours</strong><span>Listed daily 8:00-20:00</span></div>
+          <div><strong>Rating</strong><span>5.0 / 5 (5 reviews)</span></div>
+        </div>
+        <p>Founded in Urbana in 2015 by Congolese owners Memoire Budimbu Mabiza and Lisette Mbaki, and named 2020 Illinois Family-Owned Small Business of the Year by the Small Business Administration&#x27;s Illinois District Office. Range covers African grocery goods, hygiene products, kitchen supplies and traditional clothing, with a small fresh produce section. Reviews of the Champaign listing cite hard-to-find Nigerian ingredients such as water leaf, plus okra and a wide spice range.</p>
+        <p><strong>Cuisines stocked:</strong> Democratic Republic of the Congo and Central Africa; Nigeria and West Africa.</p>
+        <p class="warning">STATUS UNVERIFIED. Smile Politely reported on 1 June 2026 that the Urbana store at 202 E University Ave had closed. The Champaign listing above remains active with published hours, but the report could not independently confirm it is trading. Telephone before travelling. Included here rather than omitted because the closure notice applies to a different address.</p>
+      </div>
+    </details><h3 class="subsection">3.5 Latin American</h3>
+    <details class="store-card">
+      <summary>
+        <span>El Progreso Tienda y Carnicería</span>
+        <span class="summary-meta">4.4 / 5 (287 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1302 N Cunningham Ave, Urbana, IL 61802</span></div>
+          <div><strong>Telephone</strong><span>(217) 607-1533</span></div>
+          <div><strong>Hours</strong><span>Daily 8:00-21:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (287 reviews)</span></div>
+        </div>
+        <p>The most complete Mexican grocery in the area: full butcher counter, cheeses, dried and fresh chillies, beans, masa, piloncillo and other unrefined sugars, a large spice section, snacks and imported soft drinks. An associated taco operation runs from the site. Staff communication is predominantly in Spanish. Reviews are strong on the grocery and mixed on the prepared food.</p>
+        <p><strong>Cuisines stocked:</strong> Mexico.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>El Progreso Latino</span>
+        <span class="summary-meta">4.5 / 5 (82 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1017½ W Bloomington Rd, Champaign, IL 61821</span></div>
+          <div><strong>Telephone</strong><span>(217) 363-3069</span></div>
+          <div><strong>Hours</strong><span>Daily 8:00-21:00</span></div>
+          <div><strong>Rating</strong><span>4.5 / 5 (82 reviews)</span></div>
+        </div>
+        <p>The Champaign counterpart, smaller than the Urbana store. Staffed butcher counter with a strong reputation, a compact fresh vegetable section, full-service checkout and bagging, and a hot food counter serving tacos, tortas and alambres. Spanish is the working language of the store.</p>
+        <p><strong>Cuisines stocked:</strong> Mexico.</p>
+        
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Los Paisas</span>
+        <span class="summary-meta">4.4 / 5 (118 reviews)</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>1102 N Prospect Ave, Ste B, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>(217) 607-2144</span></div>
+          <div><strong>Hours</strong><span>Sun-Thu 6:00-23:00; Fri-Sat 6:00-24:00</span></div>
+          <div><strong>Rating</strong><span>4.4 / 5 (118 reviews)</span></div>
+        </div>
+        <p>The broadest pan-Latin American range in the area and by a wide margin the longest opening hours of any international grocer in this report. Meat and seafood counters, produce including plantains and nopal, a comprehensive dried chilli section, spices, and imported soft drinks spanning several countries including Inca Kola. The name and the beverage range point to Colombian and Andean lines alongside the Mexican core.</p>
+        <p><strong>Cuisines stocked:</strong> Mexico, Colombia, Peru, Central America.</p>
+        <p class="warning">Reviews report inconsistent shelf-to-register pricing on the meat counter. Check the receipt.</p>
+      </div>
+    </details>
+    <details class="store-card">
+      <summary>
+        <span>Pablo&#x27;s Tortillería y Abarrotes</span>
+        <span class="summary-meta">Opened 13 June 2026</span>
+      </summary>
+      <div class="store-body">
+        <div class="facts">
+          <div><strong>Address</strong><span>31 E Marketview Dr, Champaign, IL 61820</span></div>
+          <div><strong>Telephone</strong><span>Not listed</span></div>
+          <div><strong>Hours</strong><span>Mon-Sat 7:00-21:00; Sun 9:00-21:00</span></div>
+          <div><strong>Rating</strong><span>Opened 13 June 2026</span></div>
+        </div>
+        <p>The newest grocery in the area, in the north Champaign plaza with TJ Maxx and The Music Shoppe, from the owners of the Pablo&#x27;s Tacos truck parked in the same lot. The distinguishing feature is the in-house tortillería: fresh corn tortillas sold only in packs of 35 for $5. Beyond that, masa, rice, beans, seasonings and spices, vinegars, canned goods, an extensive hot sauce range, jarred sauces, packaged juices, and a refrigerator carrying chihuahua cheese, cotija, sour cream, crema and chorizo.</p>
+        <p><strong>Cuisines stocked:</strong> Mexico.</p>
+        
+      </div>
+    </details>
+
+  <h3 class="subsection">3.6 European and General Specialty</h3>
+  <p>There is no dedicated Eastern European, Polish, Russian, German or Italian grocery operating in Champaign-Urbana. European products are distributed across the specialty retailers below, with World Harvest carrying the deepest imported range. The nearest dedicated European delicatessens are in the Chicago suburbs - Bolingbrook, Homer Glen, Orland Park, Glen Ellyn and Third Lake - roughly two and a half to three hours by road.</p>
+  <div class="table-wrap"><table class=""><thead><tr><th>Retailer</th><th>Address</th><th>Hours</th><th>Relevant international range</th></tr></thead><tbody><tr><td>Art Mart</td><td>1705 S Prospect Ave, Champaign 61820<br>(217) 344-7979</td><td>Mon-Sat 7:00-19:00<br>Sun 7:00-17:00</td><td>Imported cheeses, charcuterie, European confectionery and chocolate, specialty pantry goods, wine, deli and bakery. Rated 4.6 (461 reviews).</td></tr><tr><td>Martinelli's Market, Bakery & Deli</td><td>500C N Walnut St, Champaign 61820<br>(217) 607-1306</td><td>Mon-Sat 9:00-19:00<br>Sun 9:00-16:00</td><td>Italian-American delicatessen. House-roasted meats, Alpine Swiss and other imported cheeses, rye and specialty breads, prepared foods. Rated 4.4 (238 reviews).</td></tr><tr><td>Old Time Meat & Deli Shop</td><td>2018 S Neil St, Champaign 61820<br>(217) 355-0000</td><td>Mon-Sat 10:00-18:00<br>Closed Sunday</td><td>Traditional European-style butcher: fresh and smoked sausage, cured products, specialty cuts, seafood. Rated 4.8 (197 reviews).</td></tr><tr><td>Common Ground Food Co-op</td><td>300 S Broadway Ave #166, Urbana 61801<br>(217) 352-3347</td><td>Daily 7:30-21:00</td><td>Cooperatively owned full-service grocer. Organic and local produce, cheese island, bulk goods, fair-trade coffee and tea, imported specialty pantry lines, prepared foods. Rated 4.7 (471 reviews).</td></tr><tr><td>Suzu's Bakery</td><td>114 N Walnut St, Champaign 61820<br>(217) 355-5400</td><td>Wed-Thu and Sun 8:00-18:00<br>Fri-Sat 8:00-19:00; closed Mon-Tue</td><td>Japanese-style bakery and confectionery: an-pan, mochi, yuzu and matcha items, roll cakes, cheesecake. Not a grocer. Rated 4.7 (279 reviews).</td></tr></tbody></table></div>
+  <p class="small">Local press also identifies Sun Singer (wine and gourmet, Champaign), Cheese and Crackers (Champaign) and Prairie Fruits Farm and Creamery (farmstead goat cheese, sold chiefly through farmers markets) as specialty food retailers. Addresses and hours for these three were not independently verified for this report.</p>
+</section>
+
+<section id="country">
+  <h2>4. Cross-Reference: Country of Origin to Store</h2>
+  <p>The core deliverable. For each national or regional cuisine, the stores are listed in descending order of usefulness, with the strongest source first. Chain and warehouse options are covered separately in Section 5 and are named here only where they are a meaningful source.</p>
+  <h3 class="subsection">4.1 East Asia</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>China (incl. Sichuan, Cantonese)</td><td>Fresh International Market · Asian Supermarket (Prospect) · Far East Grocery · H Mart · Asian Supermarket (First St)</td><td>Best covered cuisine in the area. Fresh International has a Cantonese deli counter.</td></tr><tr><td>Taiwan</td><td>Fresh International Market · H Mart</td><td>Fresh International operates a Taiwanese bakery counter.</td></tr><tr><td>Japan</td><td>H Mart · Fresh International Market · Far East Grocery · Ebisu Japanese Life Store · Asian Supermarket (both) · Suzu's Bakery</td><td>Ebisu for snacks, confectionery and household goods; Suzu's for fresh Japanese baked goods.</td></tr><tr><td>Korea</td><td>H Mart · Fresh International Market · Asian Supermarket (Prospect)</td><td>H Mart is the clear first choice since Green Onion closed in 2025.</td></tr></tbody></table></div><h3 class="subsection">4.2 Southeast Asia</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>Vietnam</td><td>Far East Grocery · Fresh International Market · Asian Supermarket (Prospect) · H Mart</td><td>Far East is Vietnamese-family-run and specifically recommended by Vietnamese customers.</td></tr><tr><td>Thailand</td><td>Fresh International Market · Asian Supermarket (Prospect) · Far East Grocery · H Mart</td><td>Fresh herbs and Thai aromatics are most reliable at Asian Supermarket.</td></tr><tr><td>Philippines</td><td>Maligaya's Oriental Market · Fresh International Market · H Mart</td><td>Maligaya's is the only dedicated Filipino store; short hours, closed Sundays.</td></tr><tr><td>Indonesia and Malaysia</td><td>Far East Grocery · Fresh International Market</td><td>Narrow range; call ahead for specific items.</td></tr></tbody></table></div><h3 class="subsection">4.3 South Asia</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>India</td><td>Bombay Market · Annapoorna Stores · Desi Bazaar · Mirsung · Fresh International Market</td><td>Four dedicated Indian grocers - the deepest single-cuisine coverage in the area after Chinese.</td></tr><tr><td>Pakistan</td><td>Bombay Market · Desi Bazaar · Mirsung · Signature Meats (halal meat)</td><td>Bombay Market operates a halal butcher counter in store.</td></tr><tr><td>Bangladesh</td><td>Mirsung · Bombay Market</td><td>Mirsung is the campus option; verify hours by telephone.</td></tr><tr><td>Nepal</td><td>Bombay Market</td><td>Explicitly cited by reviewers as a Nepali source.</td></tr><tr><td>Sri Lanka</td><td>Annapoorna Stores · Bombay Market</td><td>Partial coverage via South Indian lines; no dedicated Sri Lankan grocer.</td></tr></tbody></table></div><h3 class="subsection">4.4 Middle East and North Africa</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>Levant (Lebanon, Syria, Palestine, Jordan)</td><td>World Harvest · Bombay Market</td><td>World Harvest is the only substantive source: olives, cheeses, bulk olive oil, spices, dates.</td></tr><tr><td>Turkey and Greece</td><td>World Harvest · Art Mart (selected imports)</td><td>No dedicated Turkish or Greek grocer in the area.</td></tr><tr><td>Iran</td><td>World Harvest</td><td>Limited range. No dedicated Persian grocer.</td></tr><tr><td>Egypt and North Africa</td><td>World Harvest · Bombay Market</td><td>Bombay Market stocks deliberately for Middle Eastern customers.</td></tr><tr><td>Halal meat, any origin</td><td>Signature Meats · Bombay Market · Desi Bazaar · Harvest Market · World Harvest</td><td>Signature Meats is zabiha hand-slaughtered. Harvest Market operates a halal counter.</td></tr></tbody></table></div><h3 class="subsection">4.5 Sub-Saharan Africa</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>Nigeria and West Africa</td><td>Ashar African Market · Bombay Market · Desi Bazaar</td><td>Ashar is the primary source: garri, elubo, ewedu, plantain, goat, catfish.</td></tr><tr><td>DR Congo and Central Africa</td><td>Desi Bazaar · Best of Africa (status unverified)</td><td>Desi Bazaar carries pondu, safou, kwanga, kimpuka, ngai ngai, matambala, makayabu.</td></tr><tr><td>Ethiopia and Eritrea</td><td>No dedicated grocer identified</td><td>Gap in the market. Blue Ethiopian Cuisine & Cafe, 117 N Walnut St, Champaign, is a restaurant, not a retailer. Enquire at World Harvest or Ashar for teff and berbere.</td></tr></tbody></table></div><h3 class="subsection">4.6 Latin America and the Caribbean</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>Mexico</td><td>El Progreso (Urbana) · El Progreso Latino (Champaign) · Los Paisas · Pablo's Tortillería</td><td>Four dedicated stores. Pablo's is the only source of tortillas pressed on site.</td></tr><tr><td>Colombia, Peru, Central America</td><td>Los Paisas · El Progreso</td><td>Los Paisas carries the widest imported beverage and produce range beyond Mexican lines.</td></tr><tr><td>Caribbean</td><td>No dedicated grocer identified</td><td>Gap in the market. Partial substitutes at Ashar African Market and the Mexican grocers for plantain, yam, peppers and tropical produce.</td></tr></tbody></table></div><h3 class="subsection">4.7 Europe</h3><div class="table-wrap"><table class=""><thead><tr><th>Country or region</th><th>Where to buy, best source first</th><th>Notes</th></tr></thead><tbody><tr><td>Eastern Europe, Poland, Russia, Ukraine, the Baltics</td><td>No dedicated grocer identified</td><td>Gap in the market. Nearest dedicated delicatessens are in the Chicago suburbs, 2.5-3 hours by road.</td></tr><tr><td>Italy</td><td>Martinelli's Market · Art Mart · World Harvest · Common Ground</td><td>Delicatessen and specialty-shelf coverage only; no dedicated Italian grocer.</td></tr><tr><td>Germany and Central Europe</td><td>Aldi · Old Time Meat & Deli · World Harvest</td><td>Aldi runs rotating German import promotions under its own labels.</td></tr><tr><td>Britain, France, Spain, Greece and general Western Europe</td><td>World Harvest · Art Mart · Common Ground · Meijer</td><td>Cheese, charcuterie, confectionery, preserves and pantry imports distributed across these four.</td></tr></tbody></table></div>
+</section>
+
+<section id="chains">
+  <h2>5. Chain, Big-Box and Warehouse Retailers</h2>
+  <p>The mainstream chains matter here for two reasons: Champaign-Urbana's international student and academic population is large enough that the local chain stores carry deeper international assortments than comparable stores elsewhere in downstate Illinois, and two of them charge for entry.</p>
+  <p class="notice"><strong>Accuracy caveat.</strong> The assortment descriptions below reflect the standard category ranges these chains carry and local reporting on the Champaign-Urbana stores. They are not the product of a shelf-by-shelf audit and specific lines vary by store and by season.</p>
+  <div class="table-wrap"><table class=""><thead><tr><th>Retailer</th><th>Address and hours</th><th>Membership</th><th>International assortment by origin</th></tr></thead><tbody><tr><td>Meijer - Champaign</td><td>2401 N Prospect Ave, Champaign 61822<br>(217) 353-4000<br>Daily 6:00-24:00</td><td>None</td><td>The strongest international aisle of any chain in the area, per local reporting. Mexican and Central American (masa, dried chillies, canned and jarred lines); Chinese, Japanese, Korean and Thai (sauces, noodles, rice, gochujang, kimchi); Indian (spice blends, simmer sauces, ready meals, basmati); European (biscuits, preserves, confectionery). Halal-labelled frozen lines vary by store.</td></tr><tr><td>Meijer - Urbana</td><td>2500 S Philo Rd, Urbana 61802<br>(217) 365-5200<br>Daily 6:00-24:00</td><td>None</td><td>Same format and comparable range to the Champaign store.</td></tr><tr><td>Costco Wholesale</td><td>2002 N Neil St, Champaign 61820<br>(217) 600-6538<br>Mon-Fri 10:00-20:30; Sat 9:30-19:00; Sun 10:00-18:00</td><td><strong>REQUIRED</strong><br>Gold Star $65/yr<br>Executive $130/yr</td><td>Specifically noted by local press for stocking goods popular in Asian cooking at bulk scale: rice, soy and other sauces, noodles, seaweed, frozen dumplings and potstickers. Also Mexican staples, European cheeses and cured meats, and Mediterranean oils and olives. Bulk formats only.</td></tr><tr><td>Sam's Club</td><td>915 W Marketview Dr, Champaign 61822<br>(217) 355-2223<br>Daily 8:00-20:00</td><td><strong>REQUIRED</strong><br>Club $60/yr<br>Plus $120/yr</td><td>Bulk Mexican and Latin American staples, Asian sauces, rice and frozen items, European cheeses and cured meats. Carries more items in standard retail sizes than Costco.</td></tr><tr><td>Walmart Supercenter</td><td>2610 N Prospect Ave, Champaign 61822<br>(217) 352-0700<br>Daily 6:00-23:00</td><td>None</td><td>Substantial Hispanic and Latin American section; smaller Asian and Indian sections. Broad but shallow: good for staples, weak for regional specifics. Additional Walmart locations operate in the metropolitan area.</td></tr><tr><td>Harvest Market (Niemann Foods)</td><td>2029 S Neil St, Champaign 61820<br>(217) 355-7878<br>Daily 6:00-22:00</td><td>None</td><td>Identified by the University of Illinois McKinley Health Center international grocery guide as carrying halal meat, cut fruit and vegetables, and cooking meat to order at no charge. Upmarket format with a wider specialty and imported range than a standard supermarket. Rated 4.5 (2,193 reviews).</td></tr><tr><td>Schnucks Urbana</td><td>200 N Vine St, Urbana 61802<br>(217) 337-6016<br>Daily 6:00-22:00</td><td>None (free rewards card optional)</td><td>Standard supermarket international aisle: Hispanic, Asian and kosher lines, imported cheeses and European confectionery.</td></tr><tr><td>Niemanns (Campustown)</td><td>331 E Stoughton St, Champaign 61820<br>(217) 352-4123<br>Daily 7:00-23:00</td><td>None</td><td>Full-line grocery serving campus. International lines skew towards what the student population buys: instant noodles, Asian sauces, sushi counter, Hispanic staples.</td></tr><tr><td>Aldi - Champaign</td><td>801 Interstate Dr, Champaign 61822<br>Daily 8:30-20:00</td><td>None (charges for carrier bags)</td><td>German discounter. Rotating European import promotions under own-label ranges, plus a permanent core of European cheeses, cured meats and confectionery. Limited but cheap Hispanic and Asian ranges.</td></tr><tr><td>Aldi - Urbana</td><td>3102 E University Ave, Urbana 61802<br>Daily 9:00-20:00</td><td>None (charges for carrier bags)</td><td>As above.</td></tr></tbody></table></div>
+</section>
+
+<section id="membership">
+  <h2>6. Membership, Subscription and Payment Requirements</h2>
+  <p>Direct answer to the membership question: only two stores in the entire area require a paid membership to shop, and both are national warehouse clubs. Every dedicated international grocer in this report is open to the public with no membership, no subscription and no fee.</p>
+  <div class="table-wrap"><table class=""><thead><tr><th>Retailer</th><th>Requirement</th><th>Cost</th><th>Detail</th></tr></thead><tbody><tr><td>Costco Wholesale</td><td>Paid membership required</td><td>$65 or $130 per year</td><td>Gold Star $65 per year; Executive $130 per year, adding a 2 per cent annual reward on qualifying purchases capped at $1,250, early opening access and a monthly Instacart credit. One household card included with each tier. Fees last increased September 2024.</td></tr><tr><td>Sam's Club</td><td>Paid membership required</td><td>$60 or $120 per year</td><td>Club $60 per year; Plus $120 per year with cash-back rewards capped at $750. Fees increased on 1 May 2026, the first rise since 2022. Discount programmes exist for over-50s, military-affiliated households and government-assistance recipients, verified through ID.me.</td></tr><tr><td>Common Ground Food Co-op</td><td>Not required</td><td>Optional, approx. $60 one-off</td><td>Community-owned cooperative with over 9,000 owners, but ownership is not required to shop. A one-time equity investment, most recently published at $60, buys owner discount days, bulk discounts and weekly owner deals. Verify the current amount in store. Accepts Link cards with a dollar-for-dollar produce match.</td></tr><tr><td>Meijer, Walmart, Schnucks, Aldi, Harvest Market, Niemanns</td><td>Not required</td><td>Free</td><td>Loyalty schemes (mPerks, Schnucks Rewards, the Aldi app) are free and optional. Aldi charges for carrier bags; bring your own or use the free cardboard boxes.</td></tr><tr><td>All 19 independent international grocers</td><td>Not required</td><td>Free</td><td>No membership, subscription or fee of any kind at any store profiled in Section 3.</td></tr></tbody></table></div>
+  <h3 class="subsection">6.1 Payment friction at independent stores</h3>
+  <p>These are not membership requirements but they will catch out a first-time visitor:</p>
+  <ul class="tight">
+    <li>Annapoorna Stores and Maligaya's Oriental Market both apply a reported $10 minimum on card transactions. Carry cash for small purchases.</li>
+    <li>El Progreso and El Progreso Latino operate primarily in Spanish. Basic Spanish helps for special requests at the butcher counter.</li>
+    <li>Fresh International Market does not stock its customer toilet with paper; a reviewer reports being directed to buy it from the shelf.</li>
+    <li>Signature Meats applies preparation charges on fish that at least one customer disputes as inconsistently applied. Agree the total before ordering.</li>
+  </ul>
+</section>
+
+<section id="gaps">
+  <h2>7. Gaps in the Market</h2>
+  <p>Cuisines with a local population or restaurant presence but no dedicated retail source. Listed because knowing what is <em>not</em> available locally is as useful as knowing what is.</p>
+  <div class="table-wrap"><table class=""><thead><tr><th>Cuisine</th><th>Nearest practical option</th></tr></thead><tbody><tr><td>Eastern European, Polish, Russian, Ukrainian, Baltic</td><td>No local grocer. Dedicated delicatessens operate in Bolingbrook, Homer Glen, Orland Park, Glen Ellyn and Third Lake in the Chicago suburbs, roughly 2.5-3 hours by road. Locally, World Harvest and Old Time Meat & Deli carry the closest substitutes.</td></tr><tr><td>Ethiopian and Eritrean</td><td>No local grocer, despite an established Ethiopian restaurant in downtown Champaign. Ask at World Harvest for teff and berbere; Ashar African Market for adjacent staples.</td></tr><tr><td>Caribbean and Jamaican</td><td>No local grocer. Ashar African Market and the Mexican grocers cover overlapping produce and seasonings; specialist items require Chicago or mail order.</td></tr><tr><td>Turkish, Persian and Central Asian</td><td>No dedicated grocer. World Harvest is the only meaningful local source and its coverage of these three is partial.</td></tr><tr><td>Kosher</td><td>No dedicated kosher grocer. Certified packaged goods appear in the chain supermarkets, principally Schnucks and Meijer.</td></tr></tbody></table></div>
+</section>
+
+<section id="closed">
+  <h2>8. Closed and Relocated - Excluded from This Directory</h2>
+  <p>These businesses still appear in web directories, university handouts and older guides. They are not trading at the addresses given, and are listed here so that outdated references can be discounted.</p>
+  <div class="table-wrap"><table class=""><thead><tr><th>Business</th><th>Former address</th><th>Status</th></tr></thead><tbody><tr><td>AM-KO Oriental Foods & Gifts</td><td>101 E Springfield Ave, Champaign</td><td>Closed permanently, July-August 2024, after 46 years, when the building lease was not extended. Had carried Korean, Chinese and Japanese lines since 1978.</td></tr><tr><td>Green Onion Asian Market</td><td>2020 S Neil St, Champaign</td><td>Closed permanently, July 2025. Korean grocer known for house-rolled kimbap. Sister store Fresh International Market continues to trade.</td></tr><tr><td>Best of Africa Food Store</td><td>202 E University Ave, Urbana</td><td>Closed, reported 1 June 2026. Opened 2015 on Griggs Street, relocated to the University Avenue plaza in 2024. A Champaign listing on West Bradley Avenue remains active but unverified - see Section 3.4.</td></tr><tr><td>Bombay Market (former site)</td><td>West Bradley Ave, Champaign</td><td>Relocated, late 2024, to 105 N 2nd St. The vacated premises now house Desi Bazaar.</td></tr><tr><td>World Harvest (former site)</td><td>519 E University Ave, Champaign</td><td>Relocated to 306 W Springfield Ave, Urbana. University of Illinois and other institutional guides still publish the obsolete Champaign address.</td></tr><tr><td>Strawberry Fields Natural Food Store</td><td>306 W Springfield Ave, Urbana</td><td>Continues under new ownership at the same address, trading under World Harvest signage after the previous owner retired. Not a closure; listed to resolve the naming confusion.</td></tr></tbody></table></div>
+</section>
+
+<section id="sources">
+  <h2>9. Sources</h2>
+  <ul class="tight">
+    <li>Google Places business listings, published hours and customer reviews, retrieved 24 July 2026.</li><li>Smile Politely, Champaign-Urbana culture magazine - Openings &amp; Closings and Grocers &amp; Shopping coverage, 2024 to July 2026, including reports on AM-KO, Green Onion, Bombay Market, Desi Bazaar, Asian Supermarket on First Street, Best of Africa and Pablo&#x27;s Tortillería y Abarrotes.</li><li>ChambanaMoms.com, “Where to Find Specialty and International Grocery Stores in Champaign-Urbana,” last updated July 2025.</li><li>University of Illinois McKinley Health Center, International Grocery Store Guide.</li><li>Store websites: annapoornastore.com, freshimarket.com, commonground.coop, bestofafricafs.com.</li><li>Warehouse club membership pricing: consumer-finance reporting on 2026 Costco and Sam&#x27;s Club fee schedules, including the Sam&#x27;s Club increase effective 1 May 2026.</li><li>National Co+op Grocers and LocalHarvest listings for Common Ground Food Co-op ownership terms.</li>
+  </ul>
+  <p class="notice"><strong>Prepared 24 July 2026.</strong> Trading status, hours and stock change without notice; telephone before travelling for a specific item.</p>
+</section>
+</main>
+</div>
+
+<footer>
+  <p>International Chemists Association · Department of Chemistry · University of Illinois Urbana-Champaign</p>
+</footer>
+</body>
+</html>
