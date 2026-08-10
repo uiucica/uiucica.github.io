@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>International Grocery Guide | ICA at UIUC</title>
-<meta name="description" content="A practical directory of international, ethnic and specialty grocery stores in Champaign-Urbana.">
+<meta content="A practical directory of international, ethnic and specialty grocery stores in Champaign-Urbana." name="description"/>
 <style>
 :root {
   --illini-blue:#13294B;
@@ -213,14 +214,6 @@ nav {
   background:#fff1d8;
   color:#7a4a00;
 }
-.store-note {
-  margin-top:.75rem;
-  background:#fff6f2;
-  border-left:3px solid var(--illini-orange);
-  padding:.65rem .75rem;
-  font-size:.84rem;
-  color:#5e463d;
-}
 .empty {
   display:none;
   background:#fff;
@@ -229,12 +222,6 @@ nav {
   padding:2rem;
   text-align:center;
   color:var(--muted);
-}
-.directory-note {
-  margin-top:1.4rem;
-  color:var(--muted);
-  font-size:.88rem;
-  text-align:center;
 }
 footer {
   background:var(--illini-blue);
@@ -259,1144 +246,950 @@ footer {
 </style>
 </head>
 <body>
-
 <nav>
-  <a class="logo" href="index.html">ICA <span>@ Department of Chemistry, University of Illinois Urbana-Champaign</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#resources">Resources</a></li>
-    <li><a href="index.html#join">Join Us</a></li>
-  </ul>
+<a class="logo" href="index.html">ICA <span>@ Department of Chemistry, University of Illinois Urbana-Champaign</span></a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#resources">Resources</a></li>
+<li><a href="index.html#join">Join Us</a></li>
+</ul>
 </nav>
-
 <header class="hero">
-  <h1>International Grocery Guide</h1>
-  <p>Find international, ethnic and specialty grocery stores around Champaign-Urbana by store name, region or cuisine.</p>
+<h1>International Grocery Guide</h1>
+<p>Find international, ethnic and specialty grocery stores around Champaign-Urbana by store name, region or cuisine.</p>
 </header>
-
 <div class="controls-wrap">
-  <div class="controls">
-    <input id="search" type="search" placeholder="Search store, cuisine, neighborhood..." aria-label="Search stores">
-    <select id="region-filter" aria-label="Filter by region">
-      <option value="">All regions</option>
-      <option value="East &amp; Southeast Asian">East &amp; Southeast Asian</option><option value="South Asian">South Asian</option><option value="Middle Eastern &amp; Mediterranean">Middle Eastern &amp; Mediterranean</option><option value="African">African</option><option value="Latin American">Latin American</option><option value="European &amp; General Specialty">European &amp; General Specialty</option><option value="Chain / Warehouse">Chain / Warehouse</option>
-    </select>
-    <select id="type-filter" aria-label="Filter by store type">
-      <option value="">All store types</option>
-      <option value="Independent / specialty grocer">Independent / specialty grocers</option>
-      <option value="General specialty retailer">General specialty retailers</option>
-      <option value="Chain / warehouse">Chains / warehouse clubs</option>
-    </select>
-  </div>
+<div class="controls">
+<input aria-label="Search stores" id="search" placeholder="Search store, cuisine, neighborhood..." type="search"/>
+<select aria-label="Filter by region" id="region-filter">
+<option value="">All regions</option>
+<option value="East &amp; Southeast Asian">East &amp; Southeast Asian</option><option value="South Asian">South Asian</option><option value="Middle Eastern &amp; Mediterranean">Middle Eastern &amp; Mediterranean</option><option value="African">African</option><option value="Latin American">Latin American</option><option value="European &amp; General Specialty">European &amp; General Specialty</option><option value="Natural &amp; Specialty">Natural &amp; Specialty</option><option value="Chain / Warehouse">Chain / Warehouse</option>
+</select>
+<select aria-label="Filter by store type" id="type-filter">
+<option value="">All store types</option>
+<option value="Independent / specialty grocer">Independent / specialty grocers</option>
+<option value="General specialty retailer">General specialty retailers</option>
+<option value="Chain / warehouse">Chains / warehouse clubs</option>
+</select>
 </div>
-
+</div>
 <main class="content">
-  <div class="directory-head">
-    <h2>Store Directory</h2>
-    <div id="result-count">34 stores</div>
-  </div>
+<div class="directory-head">
+<h2>Store Directory</h2>
+<div id="result-count">37 stores</div>
+</div>
+<div class="store-grid" id="store-grid">
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="h mart urbana east &amp; southeast asian independent / specialty grocer east &amp; southeast asian h mart urbana independent / specialty grocer address 220 n broadway ave, urbana, il 61801 phone (217) 866-9455 hours daily 8:00-22:00 focus korea (primary), japan, china, taiwan, vietnam, thailand, philippines. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>H Mart Urbana</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=220%20N%20Broadway%20Ave%2C%20Urbana%2C%20IL%2061801" rel="noopener" target="_blank">220 N Broadway Ave, Urbana, IL 61801</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12178669455">(217) 866-9455</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 8:00-22:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Korea (primary), Japan, China, Taiwan, Vietnam, Thailand, Philippines.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="fresh international market east &amp; southeast asian independent / specialty grocer east &amp; southeast asian fresh international market independent / specialty grocer address 505 s neil st, ste 4-7, champaign, il 61820 phone (217) 607-1665 hours mon-thu and sun 9:00-21:00; fri-sat 9:00-22:00 focus china (mainland, cantonese and sichuan), taiwan, hong kong, korea, japan, vietnam, thailand, philippines; some indian and south asian dry goods. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>Fresh International Market</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=505%20S%20Neil%20St%2C%20Ste%204-7%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">505 S Neil St, Ste 4-7, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176071665">(217) 607-1665</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Thu and Sun 9:00-21:00; Fri-Sat 9:00-22:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>China (mainland, Cantonese and Sichuan), Taiwan, Hong Kong, Korea, Japan, Vietnam, Thailand, Philippines; some Indian and South Asian dry goods.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="asian supermarket (prospect avenue) east &amp; southeast asian independent / specialty grocer east &amp; southeast asian asian supermarket (prospect avenue) independent / specialty grocer address 1215 n prospect ave, champaign, il 61820 phone (217) 516-6666 hours daily 10:00-21:00 focus china, vietnam, thailand, korea, japan. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>Asian Supermarket (Prospect Avenue)</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1215%20N%20Prospect%20Ave%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">1215 N Prospect Ave, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12175166666">(217) 516-6666</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 10:00-21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>China, Vietnam, Thailand, Korea, Japan.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="asian supermarket (first street) east &amp; southeast asian independent / specialty grocer east &amp; southeast asian asian supermarket (first street) independent / specialty grocer address 505 s 1st st, champaign, il 61820 phone (217) 516-6666 (listed) hours daily 10:00–21:00 focus chinese, japanese, korean and taiwanese pantry goods, snacks, drinks, kitchenware, soju and sake. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>Asian Supermarket (First Street)</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=505%20S%201st%20St%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">505 S 1st St, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12175166666">(217) 516-6666 (listed)</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 10:00–21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Chinese, Japanese, Korean and Taiwanese pantry goods, snacks, drinks, kitchenware, soju and sake.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+
+</article>
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="far east grocery east &amp; southeast asian independent / specialty grocer east &amp; southeast asian far east grocery independent / specialty grocer address 105 s 5th st, champaign, il 61820 phone (217) 352-7137 hours daily 10:00-19:00 focus vietnam (primary), china, japan, indonesia, thailand, philippines. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>Far East Grocery</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=105%20S%205th%20St%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">105 S 5th St, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173527137">(217) 352-7137</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 10:00-19:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Vietnam (primary), China, Japan, Indonesia, Thailand, Philippines.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="maligaya's oriental market east &amp; southeast asian independent / specialty grocer east &amp; southeast asian maligaya's oriental market independent / specialty grocer address 1006 anthony dr, ste b, champaign, il 61821 phone (217) 352-2606 hours mon-sat 10:00-17:00; closed sunday focus philippines (primary); some other southeast asian lines. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>Maligaya's Oriental Market</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1006%20Anthony%20Dr%2C%20Ste%20B%2C%20Champaign%2C%20IL%2061821" rel="noopener" target="_blank">1006 Anthony Dr, Ste B, Champaign, IL 61821</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173522606">(217) 352-2606</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 10:00-17:00; closed Sunday</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Philippines (primary); some other Southeast Asian lines.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+
+</article>
+<article class="store-card" data-region="East &amp; Southeast Asian" data-search="ebisu japanese life store east &amp; southeast asian independent / specialty grocer east &amp; southeast asian ebisu japanese life store independent / specialty grocer address 524 e green st, ste 101, champaign, il 61820 phone (773) 879-7762 hours daily 11:00-21:00 focus japanese snacks, confectionery, drinks, household goods, stationery and gifts. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">East &amp; Southeast Asian</span>
+<h3>Ebisu Japanese Life Store</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=524%20E%20Green%20St%2C%20Ste%20101%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">524 E Green St, Ste 101, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+17738797762">(773) 879-7762</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 11:00-21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Japanese snacks, confectionery, drinks, household goods, stationery and gifts.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="South Asian" data-search="bombay market south asian independent / specialty grocer south asian bombay market independent / specialty grocer address 105 n 2nd st (at e university ave), champaign, il 61820 phone (217) 552-1516 hours mon-sat 10:00-20:00; sun 11:00-19:00 focus india (all regions), pakistan, bangladesh, nepal, middle east, sub-saharan africa. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">South Asian</span>
+<h3>Bombay Market</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=105%20N%202nd%20St%20%28at%20E%20University%20Ave%29%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">105 N 2nd St (at E University Ave), Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12175521516">(217) 552-1516</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 10:00-20:00; Sun 11:00-19:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>India (all regions), Pakistan, Bangladesh, Nepal, Middle East, Sub-Saharan Africa.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="South Asian" data-search="annapoorna stores south asian independent / specialty grocer south asian annapoorna stores independent / specialty grocer address 505 s neil st, ste 11, champaign, il 61820 phone (217) 355-5215 hours mon-sat 10:00-20:30; sun 10:00-20:00 focus india (south indian emphasis), sri lanka. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">South Asian</span>
+<h3>Annapoorna Stores</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=505%20S%20Neil%20St%2C%20Ste%2011%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">505 S Neil St, Ste 11, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173555215">(217) 355-5215</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 10:00-20:30; Sun 10:00-20:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>India (South Indian emphasis), Sri Lanka.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+
+</article>
+<article class="store-card" data-region="South Asian" data-search="desi bazaar indian grocery and meat store south asian independent / specialty grocer south asian desi bazaar indian grocery and meat store independent / specialty grocer address 1726 w bradley ave, champaign, il 61821 phone (217) 607-8139 hours daily 10:00-20:00 focus india, pakistan, bangladesh; democratic republic of the congo and central africa; some middle eastern lines. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">South Asian</span>
+<h3>Desi Bazaar Indian Grocery and Meat Store</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1726%20W%20Bradley%20Ave%2C%20Champaign%2C%20IL%2061821" rel="noopener" target="_blank">1726 W Bradley Ave, Champaign, IL 61821</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176078139">(217) 607-8139</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 10:00-20:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>India, Pakistan, Bangladesh; Democratic Republic of the Congo and Central Africa; some Middle Eastern lines.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+
+<article class="store-card" data-region="South Asian" data-search="signature meats, halal butcher shop south asian independent / specialty grocer south asian signature meats, halal butcher shop independent / specialty grocer address 134 e university ave, unit 102, champaign, il 61820 phone (217) 350-5590 hours tue-thu 11:00-20:00; fri-sat 10:00-20:00; sun 10:00-18:00; closed monday focus zabiha halal butcher with beef, lamb, goat, chicken, fish and frozen south asian products. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">South Asian</span>
+<h3>Signature Meats, Halal Butcher Shop</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=134%20E%20University%20Ave%2C%20Unit%20102%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">134 E University Ave, Unit 102, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173505590">(217) 350-5590</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Tue-Thu 11:00-20:00; Fri-Sat 10:00-20:00; Sun 10:00-18:00; closed Monday</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Zabiha halal butcher with beef, lamb, goat, chicken, fish and frozen South Asian products.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+
+</article>
+<article class="store-card" data-region="Middle Eastern &amp; Mediterranean" data-search="world harvest international &amp; gourmet foods middle eastern &amp; mediterranean independent / specialty grocer middle eastern &amp; mediterranean world harvest international &amp; gourmet foods independent / specialty grocer address 306 w springfield ave, urbana, il 61801 phone (217) 356-4444 hours mon-sat 10:00-20:00; sun 10:00-19:00 focus lebanon, syria, palestine, jordan, turkey, greece, iran, egypt and north africa; india and pakistan; southeast asia; eastern and western europe; latin america. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">Middle Eastern &amp; Mediterranean</span>
+<h3>World Harvest International &amp; Gourmet Foods</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=306%20W%20Springfield%20Ave%2C%20Urbana%2C%20IL%2061801" rel="noopener" target="_blank">306 W Springfield Ave, Urbana, IL 61801</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173564444">(217) 356-4444</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 10:00-20:00; Sun 10:00-19:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Lebanon, Syria, Palestine, Jordan, Turkey, Greece, Iran, Egypt and North Africa; India and Pakistan; Southeast Asia; Eastern and Western Europe; Latin America.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+
+</article>
+<article class="store-card" data-region="African" data-search="ashar african market african independent / specialty grocer african ashar african market independent / specialty grocer address 510 n cunningham ave, urbana, il 61802 phone (217) 607-5909 hours mon-sat 9:00-20:00; sun 13:00-20:00 focus nigeria (primary), ghana and west africa broadly. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">African</span>
+<h3>Ashar African Market</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=510%20N%20Cunningham%20Ave%2C%20Urbana%2C%20IL%2061802" rel="noopener" target="_blank">510 N Cunningham Ave, Urbana, IL 61802</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176075909">(217) 607-5909</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 9:00-20:00; Sun 13:00-20:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Nigeria (primary), Ghana and West Africa broadly.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+
+<article class="store-card" data-region="Latin American" data-search="el progreso tienda y carnicería latin american independent / specialty grocer latin american el progreso tienda y carnicería independent / specialty grocer address 1302 n cunningham ave, urbana, il 61802 phone (217) 607-1533 hours daily 8:00-21:00 focus mexico. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">Latin American</span>
+<h3>El Progreso Tienda y Carnicería</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1302%20N%20Cunningham%20Ave%2C%20Urbana%2C%20IL%2061802" rel="noopener" target="_blank">1302 N Cunningham Ave, Urbana, IL 61802</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176071533">(217) 607-1533</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 8:00-21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Mexico.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="Latin American" data-search="el progreso latino latin american independent / specialty grocer latin american el progreso latino independent / specialty grocer address 1017½ w bloomington rd, champaign, il 61821 phone (217) 363-3069 hours daily 8:00-21:00 focus mexico. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">Latin American</span>
+<h3>El Progreso Latino</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1017%C2%BD%20W%20Bloomington%20Rd%2C%20Champaign%2C%20IL%2061821" rel="noopener" target="_blank">1017½ W Bloomington Rd, Champaign, IL 61821</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173633069">(217) 363-3069</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 8:00-21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Mexico.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="Latin American" data-search="los paisas latin american independent / specialty grocer latin american los paisas independent / specialty grocer address 1102 n prospect ave, ste b, champaign, il 61820 phone (217) 607-2144 hours sun-thu 6:00-23:00; fri-sat 6:00-24:00 focus mexico, colombia, peru, central america. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">Latin American</span>
+<h3>Los Paisas</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1102%20N%20Prospect%20Ave%2C%20Ste%20B%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">1102 N Prospect Ave, Ste B, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176072144">(217) 607-2144</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Sun-Thu 6:00-23:00; Fri-Sat 6:00-24:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Mexico, Colombia, Peru, Central America.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+
+</article>
+<article class="store-card" data-region="Latin American" data-search="pablo's tortillería y abarrotes latin american independent / specialty grocer latin american pablo's tortillería y abarrotes independent / specialty grocer address 31 e marketview dr, champaign, il 61820 phone not listed hours mon-sat 7:00-21:00; sun 9:00-21:00 focus mexico. no paid membership required" data-type="Independent / specialty grocer">
+<div class="card-top">
+<div>
+<span class="region-badge">Latin American</span>
+<h3>Pablo's Tortillería y Abarrotes</h3>
+</div>
+<span class="type-label">Independent / specialty grocer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=31%20E%20Marketview%20Dr%2C%20Champaign%2C%20IL%2061820" rel="noopener" target="_blank">31 E Marketview Dr, Champaign, IL 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd>Not listed</dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 7:00-21:00; Sun 9:00-21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Mexico.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="Latin American" data-search="tienda guatemala latin american independent / specialty grocer latin american tienda guatemala independent / specialty grocer address 408 n race st suite b, urbana, il 61801 phone (217) 344-2770 hours mon–sat 9:00–20:00; sun 12:30–18:00 focus guatemalan and central american groceries, pantry staples, snacks and bakery items." data-type="Independent / specialty grocer"><div class="card-top"><div><span class="region-badge">Latin American</span><h3>Tienda Guatemala</h3></div><span class="type-label">Independent / specialty grocer</span></div><dl class="store-facts"><div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=408%20N%20Race%20St%20Suite%20B%2C%20Urbana%2C%20IL%2061801" rel="noopener" target="_blank">408 N Race St Suite B, Urbana, IL 61801</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+12173442770">(217) 344-2770</a></dd></div><div><dt>Hours</dt><dd>Mon–Sat 9:00–20:00; Sun 12:30–18:00</dd></div><div><dt>Focus</dt><dd>Guatemalan and Central American groceries, pantry staples, snacks and bakery items.</dd></div></dl></article><article class="store-card" data-region="Latin American" data-search="la morenita mexican store latin american independent / specialty grocer latin american la morenita mexican store independent / specialty grocer address 510 n cunningham ave suite 10, urbana, il 61802 phone (217) 530-4023 hours daily 9:15–21:00 focus mexican groceries, pantry staples, snacks and specialty products." data-type="Independent / specialty grocer"><div class="card-top"><div><span class="region-badge">Latin American</span><h3>LA Morenita Mexican Store</h3></div><span class="type-label">Independent / specialty grocer</span></div><dl class="store-facts"><div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=510%20N%20Cunningham%20Ave%20Suite%2010%2C%20Urbana%2C%20IL%2061802" rel="noopener" target="_blank">510 N Cunningham Ave Suite 10, Urbana, IL 61802</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+12175304023">(217) 530-4023</a></dd></div><div><dt>Hours</dt><dd>Daily 9:15–21:00</dd></div><div><dt>Focus</dt><dd>Mexican groceries, pantry staples, snacks and specialty products.</dd></div></dl></article><article class="store-card" data-region="European &amp; General Specialty" data-search="art mart european &amp; general specialty general specialty retailer european &amp; general specialty art mart general specialty retailer address 1705 s prospect ave, champaign 61820 phone (217) 344-7979 hours mon-sat 7:00-19:00; sun 7:00-17:00 focus imported cheeses, charcuterie, european confectionery, specialty pantry goods, wine, deli and bakery. no paid membership required" data-type="General specialty retailer">
+<div class="card-top">
+<div>
+<span class="region-badge">European &amp; General Specialty</span>
+<h3>Art Mart</h3>
+</div>
+<span class="type-label">General specialty retailer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1705%20S%20Prospect%20Ave%2C%20Champaign%2061820" rel="noopener" target="_blank">1705 S Prospect Ave, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173447979">(217) 344-7979</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 7:00-19:00; Sun 7:00-17:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Imported cheeses, charcuterie, European confectionery, specialty pantry goods, wine, deli and bakery.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="European &amp; General Specialty" data-search="martinelli's market, bakery &amp; deli european &amp; general specialty general specialty retailer european &amp; general specialty martinelli's market, bakery &amp; deli general specialty retailer address 500c n walnut st, champaign 61820 phone (217) 607-1306 hours mon-sat 9:00-19:00; sun 9:00-16:00 focus italian-american deli with house-roasted meats, imported cheeses, specialty breads and prepared foods. no paid membership required" data-type="General specialty retailer">
+<div class="card-top">
+<div>
+<span class="region-badge">European &amp; General Specialty</span>
+<h3>Martinelli's Market, Bakery &amp; Deli</h3>
+</div>
+<span class="type-label">General specialty retailer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=500C%20N%20Walnut%20St%2C%20Champaign%2061820" rel="noopener" target="_blank">500C N Walnut St, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176071306">(217) 607-1306</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 9:00-19:00; Sun 9:00-16:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Italian-American deli with house-roasted meats, imported cheeses, specialty breads and prepared foods.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="European &amp; General Specialty" data-search="old time meat &amp; deli shop european &amp; general specialty general specialty retailer european &amp; general specialty old time meat &amp; deli shop general specialty retailer address 2018 s neil st, champaign 61820 phone (217) 355-0000 hours mon-sat 10:00-18:00; closed sunday focus european-style butcher with fresh and smoked sausage, cured meats, specialty cuts and seafood. no paid membership required" data-type="General specialty retailer">
+<div class="card-top">
+<div>
+<span class="region-badge">European &amp; General Specialty</span>
+<h3>Old Time Meat &amp; Deli Shop</h3>
+</div>
+<span class="type-label">General specialty retailer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=2018%20S%20Neil%20St%2C%20Champaign%2061820" rel="noopener" target="_blank">2018 S Neil St, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173550000">(217) 355-0000</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Sat 10:00-18:00; Closed Sunday</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>European-style butcher with fresh and smoked sausage, cured meats, specialty cuts and seafood.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="European &amp; General Specialty" data-search="common ground food co-op european &amp; general specialty general specialty retailer european &amp; general specialty common ground food co-op general specialty retailer address 300 s broadway ave #166, urbana 61801 phone (217) 352-3347 hours daily 7:30-21:00 focus full-service co-op with local and organic produce, bulk foods, cheeses, specialty pantry items and prepared foods. no paid membership required" data-type="General specialty retailer">
+<div class="card-top">
+<div>
+<span class="region-badge">European &amp; General Specialty</span>
+<h3>Common Ground Food Co-op</h3>
+</div>
+<span class="type-label">General specialty retailer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=300%20S%20Broadway%20Ave%20%23166%2C%20Urbana%2061801" rel="noopener" target="_blank">300 S Broadway Ave #166, Urbana 61801</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173523347">(217) 352-3347</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 7:30-21:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Full-service co-op with local and organic produce, bulk foods, cheeses, specialty pantry items and prepared foods.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="European &amp; General Specialty" data-search="suzu's bakery european &amp; general specialty general specialty retailer european &amp; general specialty suzu's bakery general specialty retailer address 114 n walnut st, champaign 61820 phone (217) 355-5400 hours wed-thu and sun 8:00-18:00; fri-sat 8:00-19:00; closed mon-tue focus japanese-style bakery and confectionery with an-pan, mochi, yuzu and matcha items, cakes and cheesecake. no paid membership required" data-type="General specialty retailer">
+<div class="card-top">
+<div>
+<span class="region-badge">European &amp; General Specialty</span>
+<h3>Suzu's Bakery</h3>
+</div>
+<span class="type-label">General specialty retailer</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=114%20N%20Walnut%20St%2C%20Champaign%2061820" rel="noopener" target="_blank">114 N Walnut St, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173555400">(217) 355-5400</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Wed-Thu and Sun 8:00-18:00; Fri-Sat 8:00-19:00; closed Mon-Tue</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Japanese-style bakery and confectionery with an-pan, mochi, yuzu and matcha items, cakes and cheesecake.</dd>
+</div>
+</dl>
+<div class="membership">No paid membership required</div>
+</article>
+<article class="store-card" data-region="European &amp; General Specialty" data-search="cheese &amp; crackers european &amp; general specialty general specialty retailer european &amp; general specialty cheese &amp; crackers general specialty retailer address 1715 w kirby ave, champaign, il 61821 phone (217) 615-8531 hours tue–sat 11:00–18:00; closed sun–mon focus imported cheeses, italian, spanish, french and german cured meats, chocolates, pantry goods and fresh seafood." data-type="General specialty retailer"><div class="card-top"><div><span class="region-badge">European &amp; General Specialty</span><h3>Cheese &amp; Crackers</h3></div><span class="type-label">General specialty retailer</span></div><dl class="store-facts"><div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1715%20W%20Kirby%20Ave%2C%20Champaign%2C%20IL%2061821" rel="noopener" target="_blank">1715 W Kirby Ave, Champaign, IL 61821</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+12176158531">(217) 615-8531</a></dd></div><div><dt>Hours</dt><dd>Tue–Sat 11:00–18:00; closed Sun–Mon</dd></div><div><dt>Focus</dt><dd>Imported cheeses, Italian, Spanish, French and German cured meats, chocolates, pantry goods and fresh seafood.</dd></div></dl></article><article class="store-card" data-region="Natural &amp; Specialty" data-search="natural gourmet natural &amp; specialty general specialty retailer natural &amp; specialty natural gourmet general specialty retailer address 1739 w kirby ave, champaign, il 61821 phone (217) 355-6365 hours mon–sat 9:00–18:00; closed sun focus natural and organic groceries, bulk spices and teas, gluten-free foods, specialty pantry items and supplements." data-type="General specialty retailer"><div class="card-top"><div><span class="region-badge">Natural &amp; Specialty</span><h3>Natural Gourmet</h3></div><span class="type-label">General specialty retailer</span></div><dl class="store-facts"><div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=1739%20W%20Kirby%20Ave%2C%20Champaign%2C%20IL%2061821" rel="noopener" target="_blank">1739 W Kirby Ave, Champaign, IL 61821</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+12173556365">(217) 355-6365</a></dd></div><div><dt>Hours</dt><dd>Mon–Sat 9:00–18:00; closed Sun</dd></div><div><dt>Focus</dt><dd>Natural and organic groceries, bulk spices and teas, gluten-free foods, specialty pantry items and supplements.</dd></div></dl></article><article class="store-card" data-region="Chain / Warehouse" data-search="meijer - champaign chain / warehouse chain / warehouse chain / warehouse meijer - champaign chain / warehouse address 2401 n prospect ave, champaign 61822 phone (217) 353-4000 hours daily 6:00-24:00 focus broad international aisle with mexican/central american, east asian, indian and european staples." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Meijer - Champaign</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=2401%20N%20Prospect%20Ave%2C%20Champaign%2061822" rel="noopener" target="_blank">2401 N Prospect Ave, Champaign 61822</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173534000">(217) 353-4000</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 6:00-24:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Broad international aisle with Mexican/Central American, East Asian, Indian and European staples.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="meijer - urbana chain / warehouse chain / warehouse chain / warehouse meijer - urbana chain / warehouse address 2500 s philo rd, urbana 61802 phone (217) 365-5200 hours daily 6:00-24:00 focus broad international grocery selection comparable to the champaign meijer." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Meijer - Urbana</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=2500%20S%20Philo%20Rd%2C%20Urbana%2061802" rel="noopener" target="_blank">2500 S Philo Rd, Urbana 61802</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173655200">(217) 365-5200</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 6:00-24:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Broad international grocery selection comparable to the Champaign Meijer.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="costco wholesale chain / warehouse chain / warehouse chain / warehouse costco wholesale chain / warehouse address 2002 n neil st, champaign 61820 phone (217) 600-6538 hours mon-fri 10:00-20:30; sat 9:30-19:00; sun 10:00-18:00 focus bulk asian staples, mexican groceries, european cheeses and cured meats, and mediterranean oils and olives. paid membership required gold star $65/yr executive $130/yr" data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Costco Wholesale</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=2002%20N%20Neil%20St%2C%20Champaign%2061820" rel="noopener" target="_blank">2002 N Neil St, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12176006538">(217) 600-6538</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Mon-Fri 10:00-20:30; Sat 9:30-19:00; Sun 10:00-18:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Bulk Asian staples, Mexican groceries, European cheeses and cured meats, and Mediterranean oils and olives.</dd>
+</div>
+</dl>
+<div class="membership paid">Paid membership required Gold Star $65/yr Executive $130/yr</div>
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="sam's club chain / warehouse chain / warehouse chain / warehouse sam's club chain / warehouse address 915 w marketview dr, champaign 61822 phone (217) 355-2223 hours daily 8:00-20:00 focus bulk latin american and asian staples, plus european cheeses and cured meats. paid membership required club $60/yr plus $120/yr" data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Sam's Club</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=915%20W%20Marketview%20Dr%2C%20Champaign%2061822" rel="noopener" target="_blank">915 W Marketview Dr, Champaign 61822</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173552223">(217) 355-2223</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 8:00-20:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Bulk Latin American and Asian staples, plus European cheeses and cured meats.</dd>
+</div>
+</dl>
+<div class="membership paid">Paid membership required Club $60/yr Plus $120/yr</div>
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="walmart supercenter chain / warehouse chain / warehouse chain / warehouse walmart supercenter chain / warehouse address 2610 n prospect ave, champaign 61822 phone (217) 352-0700 hours daily 6:00-23:00 focus large hispanic/latin american section with smaller asian and indian sections." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Walmart Supercenter</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=2610%20N%20Prospect%20Ave%2C%20Champaign%2061822" rel="noopener" target="_blank">2610 N Prospect Ave, Champaign 61822</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173520700">(217) 352-0700</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 6:00-23:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Large Hispanic/Latin American section with smaller Asian and Indian sections.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="harvest market (niemann foods) chain / warehouse chain / warehouse chain / warehouse harvest market (niemann foods) chain / warehouse address 2029 s neil st, champaign 61820 phone (217) 355-7878 hours daily 6:00-22:00 focus specialty and imported groceries, including halal meat and prepared produce." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Harvest Market (Niemann Foods)</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=2029%20S%20Neil%20St%2C%20Champaign%2061820" rel="noopener" target="_blank">2029 S Neil St, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173557878">(217) 355-7878</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 6:00-22:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Specialty and imported groceries, including halal meat and prepared produce.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="schnucks urbana chain / warehouse chain / warehouse chain / warehouse schnucks urbana chain / warehouse address 200 n vine st, urbana 61802 phone (217) 337-6016 hours daily 6:00-22:00 focus international aisle with hispanic, asian and kosher products, plus imported cheeses and european confectionery." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Schnucks Urbana</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=200%20N%20Vine%20St%2C%20Urbana%2061802" rel="noopener" target="_blank">200 N Vine St, Urbana 61802</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173376016">(217) 337-6016</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 6:00-22:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>International aisle with Hispanic, Asian and kosher products, plus imported cheeses and European confectionery.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="niemanns (campustown) chain / warehouse chain / warehouse chain / warehouse niemanns (campustown) chain / warehouse address 331 e stoughton st, champaign 61820 phone (217) 352-4123 hours daily 7:00-23:00 focus campus-focused grocery with instant noodles, asian sauces, sushi and hispanic staples." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Niemanns (Campustown)</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=331%20E%20Stoughton%20St%2C%20Champaign%2061820" rel="noopener" target="_blank">331 E Stoughton St, Champaign 61820</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd><a href="tel:+12173524123">(217) 352-4123</a></dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 7:00-23:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Campus-focused grocery with instant noodles, Asian sauces, sushi and Hispanic staples.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="aldi - champaign chain / warehouse chain / warehouse chain / warehouse aldi - champaign chain / warehouse address 801 interstate dr, champaign 61822 phone not listed hours daily 8:30-20:00 focus rotating german and european imports, plus a smaller selection of hispanic and asian groceries." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Aldi - Champaign</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=801%20Interstate%20Dr%2C%20Champaign%2061822" rel="noopener" target="_blank">801 Interstate Dr, Champaign 61822</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd>Not listed</dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 8:30-20:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Rotating German and European imports, plus a smaller selection of Hispanic and Asian groceries.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="aldi - urbana chain / warehouse chain / warehouse chain / warehouse aldi - urbana chain / warehouse address 3102 e university ave, urbana 61802 phone not listed hours daily 9:00-20:00 focus rotating german and european imports, plus a smaller selection of hispanic and asian groceries." data-type="Chain / warehouse">
+<div class="card-top">
+<div>
+<span class="region-badge">Chain / Warehouse</span>
+<h3>Aldi - Urbana</h3>
+</div>
+<span class="type-label">Chain / warehouse</span>
+</div>
+<dl class="store-facts">
+<div>
+<dt>Address</dt>
+<dd><a href="https://www.google.com/maps/search/?api=1&amp;query=3102%20E%20University%20Ave%2C%20Urbana%2061802" rel="noopener" target="_blank">3102 E University Ave, Urbana 61802</a></dd>
+</div>
+<div>
+<dt>Phone</dt>
+<dd>Not listed</dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Daily 9:00-20:00</dd>
+</div>
+<div>
+<dt>Focus</dt>
+<dd>Rotating German and European imports, plus a smaller selection of Hispanic and Asian groceries.</dd>
+</div>
+</dl>
+
+</article>
+<article class="store-card" data-region="Chain / Warehouse" data-search="aldi - savoy chain / warehouse chain / warehouse chain / warehouse aldi - savoy chain / warehouse address 605 n dunlap ave, savoy, il 61874 phone (855) 955-2534 hours daily 8:30–20:00 focus rotating german and european imports, plus a smaller selection of hispanic and asian groceries." data-type="Chain / warehouse"><div class="card-top"><div><span class="region-badge">Chain / Warehouse</span><h3>ALDI - Savoy</h3></div><span class="type-label">Chain / warehouse</span></div><dl class="store-facts"><div><dt>Address</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=605%20N%20Dunlap%20Ave%2C%20Savoy%2C%20IL%2061874" rel="noopener" target="_blank">605 N Dunlap Ave, Savoy, IL 61874</a></dd></div><div><dt>Phone</dt><dd><a href="tel:+18559552534">(855) 955-2534</a></dd></div><div><dt>Hours</dt><dd>Daily 8:30–20:00</dd></div><div><dt>Focus</dt><dd>Rotating German and European imports, plus a smaller selection of Hispanic and Asian groceries.</dd></div></dl></article></div>
+<div class="empty" id="empty">No stores match those filters.</div>
 
-  <div id="store-grid" class="store-grid">
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="h mart urbana east &amp; southeast asian independent / specialty grocer 220 n broadway ave, urbana, il 61801 korea (primary), japan, china, taiwan, vietnam, thailand, philippines. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>H Mart Urbana</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=220%20N%20Broadway%20Ave%2C%20Urbana%2C%20IL%2061801" target="_blank" rel="noopener">220 N Broadway Ave, Urbana, IL 61801</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12178669455">(217) 866-9455</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 8:00-22:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Korea (primary), Japan, China, Taiwan, Vietnam, Thailand, Philippines.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="fresh international market east &amp; southeast asian independent / specialty grocer 505 s neil st, ste 4-7, champaign, il 61820 china (mainland, cantonese and sichuan), taiwan, hong kong, korea, japan, vietnam, thailand, philippines; some indian and south asian dry goods. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>Fresh International Market</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=505%20S%20Neil%20St%2C%20Ste%204-7%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">505 S Neil St, Ste 4-7, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176071665">(217) 607-1665</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Thu and Sun 9:00-21:00; Fri-Sat 9:00-22:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>China (mainland, Cantonese and Sichuan), Taiwan, Hong Kong, Korea, Japan, Vietnam, Thailand, Philippines; some Indian and South Asian dry goods.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="asian supermarket (prospect avenue) east &amp; southeast asian independent / specialty grocer 1215 n prospect ave, champaign, il 61820 china, vietnam, thailand, korea, japan. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>Asian Supermarket (Prospect Avenue)</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1215%20N%20Prospect%20Ave%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">1215 N Prospect Ave, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12175166666">(217) 516-6666</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 10:00-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>China, Vietnam, Thailand, Korea, Japan.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="asian supermarket (first street) east &amp; southeast asian independent / specialty grocer 505 s 1st st, champaign, il 61820 china, japan, korea, taiwan. no paid membership required note: despite the shared name and a shared telephone number on the google listing, local press treats this as a separate store from the prospect avenue asian supermarket. confirm which location you are calling.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>Asian Supermarket (First Street)</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=505%20S%201st%20St%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">505 S 1st St, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12175166666">(217) 516-6666 (listed)</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Thu 12:00-21:00; Fri-Sun 9:00-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>China, Japan, Korea, Taiwan.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">Note: despite the shared name and a shared telephone number on the Google listing, local press treats this as a separate store from the Prospect Avenue Asian Supermarket. Confirm which location you are calling.</div>
-    </article>
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="far east grocery east &amp; southeast asian independent / specialty grocer 105 s 5th st, champaign, il 61820 vietnam (primary), china, japan, indonesia, thailand, philippines. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>Far East Grocery</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=105%20S%205th%20St%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">105 S 5th St, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173527137">(217) 352-7137</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 10:00-19:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Vietnam (primary), China, Japan, Indonesia, Thailand, Philippines.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="maligaya&#x27;s oriental market east &amp; southeast asian independent / specialty grocer 1006 anthony dr, ste b, champaign, il 61821 philippines (primary); some other southeast asian lines. no paid membership required reported card minimum of $10. carry cash for small purchases.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>Maligaya&#x27;s Oriental Market</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1006%20Anthony%20Dr%2C%20Ste%20B%2C%20Champaign%2C%20IL%2061821" target="_blank" rel="noopener">1006 Anthony Dr, Ste B, Champaign, IL 61821</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173522606">(217) 352-2606</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 10:00-17:00; closed Sunday</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Philippines (primary); some other Southeast Asian lines.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">Reported card minimum of $10. Carry cash for small purchases.</div>
-    </article>
-    
-    <article class="store-card" data-region="East &amp; Southeast Asian" data-type="Independent / specialty grocer" data-search="ebisu japanese life store east &amp; southeast asian independent / specialty grocer 524 e green st, ste 101, champaign, il 61820 japan. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">East &amp; Southeast Asian</span>
-          <h3>Ebisu Japanese Life Store</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=524%20E%20Green%20St%2C%20Ste%20101%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">524 E Green St, Ste 101, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd>Not listed</dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 11:00-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Japan.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="South Asian" data-type="Independent / specialty grocer" data-search="bombay market south asian independent / specialty grocer 105 n 2nd st (at e university ave), champaign, il 61820 india (all regions), pakistan, bangladesh, nepal, middle east, sub-saharan africa. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">South Asian</span>
-          <h3>Bombay Market</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=105%20N%202nd%20St%20%28at%20E%20University%20Ave%29%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">105 N 2nd St (at E University Ave), Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12175521516">(217) 552-1516</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 10:00-20:00; Sun 11:00-19:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>India (all regions), Pakistan, Bangladesh, Nepal, Middle East, Sub-Saharan Africa.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="South Asian" data-type="Independent / specialty grocer" data-search="annapoorna stores south asian independent / specialty grocer 505 s neil st, ste 11, champaign, il 61820 india (south indian emphasis), sri lanka. no paid membership required reported card minimum of $10.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">South Asian</span>
-          <h3>Annapoorna Stores</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=505%20S%20Neil%20St%2C%20Ste%2011%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">505 S Neil St, Ste 11, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173555215">(217) 355-5215</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 10:00-20:30; Sun 10:00-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>India (South Indian emphasis), Sri Lanka.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">Reported card minimum of $10.</div>
-    </article>
-    
-    <article class="store-card" data-region="South Asian" data-type="Independent / specialty grocer" data-search="desi bazaar indian grocery and meat store south asian independent / specialty grocer 1726 w bradley ave, champaign, il 61821 india, pakistan, bangladesh; democratic republic of the congo and central africa; some middle eastern lines. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">South Asian</span>
-          <h3>Desi Bazaar Indian Grocery and Meat Store</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1726%20W%20Bradley%20Ave%2C%20Champaign%2C%20IL%2061821" target="_blank" rel="noopener">1726 W Bradley Ave, Champaign, IL 61821</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176078139">(217) 607-8139</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 10:00-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>India, Pakistan, Bangladesh; Democratic Republic of the Congo and Central Africa; some Middle Eastern lines.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="South Asian" data-type="Independent / specialty grocer" data-search="mirsung south asian independent / specialty grocer 49 e green st, champaign, il 61820 india, pakistan, bangladesh. no paid membership required multiple reviews report stock at or past its best-before date. check dates before purchase. google publishes no current hours; telephone to confirm before travelling.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">South Asian</span>
-          <h3>Mirsung</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=49%20E%20Green%20St%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">49 E Green St, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173442660">(217) 344-2660</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Listed 11:00-21:00 daily (Yelp); Google hours not published</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>India, Pakistan, Bangladesh.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">Multiple reviews report stock at or past its best-before date. Check dates before purchase. Google publishes no current hours; telephone to confirm before travelling.</div>
-    </article>
-    
-    <article class="store-card" data-region="South Asian" data-type="Independent / specialty grocer" data-search="signature meats, halal butcher shop south asian independent / specialty grocer 134 e university ave, unit 102, champaign, il 61820 serves south asian and middle eastern halal households; not a general grocer. no paid membership required at least one detailed review disputes surcharges applied for cutting and cleaning fish. confirm the total price including preparation before ordering.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">South Asian</span>
-          <h3>Signature Meats, Halal Butcher Shop</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=134%20E%20University%20Ave%2C%20Unit%20102%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">134 E University Ave, Unit 102, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173505590">(217) 350-5590</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Tue-Thu 11:00-20:00; Fri-Sat 10:00-20:00; Sun 10:00-18:00; closed Monday</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Serves South Asian and Middle Eastern halal households; not a general grocer.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">At least one detailed review disputes surcharges applied for cutting and cleaning fish. Confirm the total price including preparation before ordering.</div>
-    </article>
-    
-    <article class="store-card" data-region="Middle Eastern &amp; Mediterranean" data-type="Independent / specialty grocer" data-search="world harvest international &amp; gourmet foods middle eastern &amp; mediterranean independent / specialty grocer 306 w springfield ave, urbana, il 61801 lebanon, syria, palestine, jordan, turkey, greece, iran, egypt and north africa; india and pakistan; southeast asia; eastern and western europe; latin america. no paid membership required older directories list world harvest at 519 e university ave, champaign. that address is out of date. the store is in urbana.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Middle Eastern &amp; Mediterranean</span>
-          <h3>World Harvest International &amp; Gourmet Foods</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=306%20W%20Springfield%20Ave%2C%20Urbana%2C%20IL%2061801" target="_blank" rel="noopener">306 W Springfield Ave, Urbana, IL 61801</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173564444">(217) 356-4444</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 10:00-20:00; Sun 10:00-19:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Lebanon, Syria, Palestine, Jordan, Turkey, Greece, Iran, Egypt and North Africa; India and Pakistan; Southeast Asia; Eastern and Western Europe; Latin America.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">Older directories list World Harvest at 519 E University Ave, Champaign. That address is out of date. The store is in Urbana.</div>
-    </article>
-    
-    <article class="store-card" data-region="African" data-type="Independent / specialty grocer" data-search="ashar african market african independent / specialty grocer 510 n cunningham ave, urbana, il 61802 nigeria (primary), ghana and west africa broadly. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">African</span>
-          <h3>Ashar African Market</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=510%20N%20Cunningham%20Ave%2C%20Urbana%2C%20IL%2061802" target="_blank" rel="noopener">510 N Cunningham Ave, Urbana, IL 61802</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176075909">(217) 607-5909</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 9:00-20:00; Sun 13:00-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Nigeria (primary), Ghana and West Africa broadly.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="African" data-type="Independent / specialty grocer" data-search="best of africa food store african independent / specialty grocer 1807 w bradley ave, ste f, champaign, il 61821 democratic republic of the congo and central africa; nigeria and west africa. no paid membership required status unverified. smile politely reported on 1 june 2026 that the urbana store at 202 e university ave had closed. the champaign listing above remains active with published hours, but the report could not independently confirm it is trading. telephone before travelling. included here rather than omitted because the closure notice applies to a different address.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">African</span>
-          <h3>Best of Africa Food Store</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1807%20W%20Bradley%20Ave%2C%20Ste%20F%2C%20Champaign%2C%20IL%2061821" target="_blank" rel="noopener">1807 W Bradley Ave, Ste F, Champaign, IL 61821</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12175521151">(217) 552-1151</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Listed daily 8:00-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Democratic Republic of the Congo and Central Africa; Nigeria and West Africa.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">STATUS UNVERIFIED. Smile Politely reported on 1 June 2026 that the Urbana store at 202 E University Ave had closed. The Champaign listing above remains active with published hours, but the report could not independently confirm it is trading. Telephone before travelling. Included here rather than omitted because the closure notice applies to a different address.</div>
-    </article>
-    
-    <article class="store-card" data-region="Latin American" data-type="Independent / specialty grocer" data-search="el progreso tienda y carnicería latin american independent / specialty grocer 1302 n cunningham ave, urbana, il 61802 mexico. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Latin American</span>
-          <h3>El Progreso Tienda y Carnicería</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1302%20N%20Cunningham%20Ave%2C%20Urbana%2C%20IL%2061802" target="_blank" rel="noopener">1302 N Cunningham Ave, Urbana, IL 61802</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176071533">(217) 607-1533</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 8:00-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Mexico.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Latin American" data-type="Independent / specialty grocer" data-search="el progreso latino latin american independent / specialty grocer 1017½ w bloomington rd, champaign, il 61821 mexico. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Latin American</span>
-          <h3>El Progreso Latino</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1017%C2%BD%20W%20Bloomington%20Rd%2C%20Champaign%2C%20IL%2061821" target="_blank" rel="noopener">1017½ W Bloomington Rd, Champaign, IL 61821</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173633069">(217) 363-3069</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 8:00-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Mexico.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Latin American" data-type="Independent / specialty grocer" data-search="los paisas latin american independent / specialty grocer 1102 n prospect ave, ste b, champaign, il 61820 mexico, colombia, peru, central america. no paid membership required reviews report inconsistent shelf-to-register pricing on the meat counter. check the receipt.">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Latin American</span>
-          <h3>Los Paisas</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1102%20N%20Prospect%20Ave%2C%20Ste%20B%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">1102 N Prospect Ave, Ste B, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176072144">(217) 607-2144</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Sun-Thu 6:00-23:00; Fri-Sat 6:00-24:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Mexico, Colombia, Peru, Central America.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      <div class="store-note">Reviews report inconsistent shelf-to-register pricing on the meat counter. Check the receipt.</div>
-    </article>
-    
-    <article class="store-card" data-region="Latin American" data-type="Independent / specialty grocer" data-search="pablo&#x27;s tortillería y abarrotes latin american independent / specialty grocer 31 e marketview dr, champaign, il 61820 mexico. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Latin American</span>
-          <h3>Pablo&#x27;s Tortillería y Abarrotes</h3>
-        </div>
-        <span class="type-label">Independent / specialty grocer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=31%20E%20Marketview%20Dr%2C%20Champaign%2C%20IL%2061820" target="_blank" rel="noopener">31 E Marketview Dr, Champaign, IL 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd>Not listed</dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 7:00-21:00; Sun 9:00-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Mexico.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="European &amp; General Specialty" data-type="General specialty retailer" data-search="art mart european &amp; general specialty general specialty retailer 1705 s prospect ave, champaign 61820 imported cheeses, charcuterie, european confectionery, specialty pantry goods, wine, deli and bakery. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">European &amp; General Specialty</span>
-          <h3>Art Mart</h3>
-        </div>
-        <span class="type-label">General specialty retailer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=1705%20S%20Prospect%20Ave%2C%20Champaign%2061820" target="_blank" rel="noopener">1705 S Prospect Ave, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173447979">(217) 344-7979</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 7:00-19:00; Sun 7:00-17:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Imported cheeses, charcuterie, European confectionery, specialty pantry goods, wine, deli and bakery.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="European &amp; General Specialty" data-type="General specialty retailer" data-search="martinelli&#x27;s market, bakery &amp; deli european &amp; general specialty general specialty retailer 500c n walnut st, champaign 61820 italian-american deli with house-roasted meats, imported cheeses, specialty breads and prepared foods. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">European &amp; General Specialty</span>
-          <h3>Martinelli&#x27;s Market, Bakery &amp; Deli</h3>
-        </div>
-        <span class="type-label">General specialty retailer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=500C%20N%20Walnut%20St%2C%20Champaign%2061820" target="_blank" rel="noopener">500C N Walnut St, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176071306">(217) 607-1306</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 9:00-19:00; Sun 9:00-16:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Italian-American deli with house-roasted meats, imported cheeses, specialty breads and prepared foods.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="European &amp; General Specialty" data-type="General specialty retailer" data-search="old time meat &amp; deli shop european &amp; general specialty general specialty retailer 2018 s neil st, champaign 61820 european-style butcher with fresh and smoked sausage, cured meats, specialty cuts and seafood. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">European &amp; General Specialty</span>
-          <h3>Old Time Meat &amp; Deli Shop</h3>
-        </div>
-        <span class="type-label">General specialty retailer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=2018%20S%20Neil%20St%2C%20Champaign%2061820" target="_blank" rel="noopener">2018 S Neil St, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173550000">(217) 355-0000</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Sat 10:00-18:00; Closed Sunday</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>European-style butcher with fresh and smoked sausage, cured meats, specialty cuts and seafood.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="European &amp; General Specialty" data-type="General specialty retailer" data-search="common ground food co-op european &amp; general specialty general specialty retailer 300 s broadway ave #166, urbana 61801 full-service co-op with local and organic produce, bulk foods, cheeses, specialty pantry items and prepared foods. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">European &amp; General Specialty</span>
-          <h3>Common Ground Food Co-op</h3>
-        </div>
-        <span class="type-label">General specialty retailer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=300%20S%20Broadway%20Ave%20%23166%2C%20Urbana%2061801" target="_blank" rel="noopener">300 S Broadway Ave #166, Urbana 61801</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173523347">(217) 352-3347</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 7:30-21:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Full-service co-op with local and organic produce, bulk foods, cheeses, specialty pantry items and prepared foods.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="European &amp; General Specialty" data-type="General specialty retailer" data-search="suzu&#x27;s bakery european &amp; general specialty general specialty retailer 114 n walnut st, champaign 61820 japanese-style bakery and confectionery with an-pan, mochi, yuzu and matcha items, cakes and cheesecake. no paid membership required ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">European &amp; General Specialty</span>
-          <h3>Suzu&#x27;s Bakery</h3>
-        </div>
-        <span class="type-label">General specialty retailer</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=114%20N%20Walnut%20St%2C%20Champaign%2061820" target="_blank" rel="noopener">114 N Walnut St, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173555400">(217) 355-5400</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Wed-Thu and Sun 8:00-18:00; Fri-Sat 8:00-19:00; closed Mon-Tue</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Japanese-style bakery and confectionery with an-pan, mochi, yuzu and matcha items, cakes and cheesecake.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">No paid membership required</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="meijer - champaign chain / warehouse chain / warehouse 2401 n prospect ave, champaign 61822 broad international aisle with mexican/central american, east asian, indian and european staples. none ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Meijer - Champaign</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=2401%20N%20Prospect%20Ave%2C%20Champaign%2061822" target="_blank" rel="noopener">2401 N Prospect Ave, Champaign 61822</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173534000">(217) 353-4000</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 6:00-24:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Broad international aisle with Mexican/Central American, East Asian, Indian and European staples.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="meijer - urbana chain / warehouse chain / warehouse 2500 s philo rd, urbana 61802 broad international grocery selection comparable to the champaign meijer. none ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Meijer - Urbana</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=2500%20S%20Philo%20Rd%2C%20Urbana%2061802" target="_blank" rel="noopener">2500 S Philo Rd, Urbana 61802</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173655200">(217) 365-5200</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 6:00-24:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Broad international grocery selection comparable to the Champaign Meijer.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="costco wholesale chain / warehouse chain / warehouse 2002 n neil st, champaign 61820 bulk asian staples, mexican groceries, european cheeses and cured meats, and mediterranean oils and olives. paid membership required gold star $65/yr executive $130/yr ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Costco Wholesale</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=2002%20N%20Neil%20St%2C%20Champaign%2061820" target="_blank" rel="noopener">2002 N Neil St, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12176006538">(217) 600-6538</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Mon-Fri 10:00-20:30; Sat 9:30-19:00; Sun 10:00-18:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Bulk Asian staples, Mexican groceries, European cheeses and cured meats, and Mediterranean oils and olives.</dd>
-        </div>
-      </dl>
-
-      <div class="membership paid">Paid membership required Gold Star $65/yr Executive $130/yr</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="sam&#x27;s club chain / warehouse chain / warehouse 915 w marketview dr, champaign 61822 bulk latin american and asian staples, plus european cheeses and cured meats. paid membership required club $60/yr plus $120/yr ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Sam&#x27;s Club</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=915%20W%20Marketview%20Dr%2C%20Champaign%2061822" target="_blank" rel="noopener">915 W Marketview Dr, Champaign 61822</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173552223">(217) 355-2223</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 8:00-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Bulk Latin American and Asian staples, plus European cheeses and cured meats.</dd>
-        </div>
-      </dl>
-
-      <div class="membership paid">Paid membership required Club $60/yr Plus $120/yr</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="walmart supercenter chain / warehouse chain / warehouse 2610 n prospect ave, champaign 61822 large hispanic/latin american section with smaller asian and indian sections. none ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Walmart Supercenter</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=2610%20N%20Prospect%20Ave%2C%20Champaign%2061822" target="_blank" rel="noopener">2610 N Prospect Ave, Champaign 61822</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173520700">(217) 352-0700</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 6:00-23:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Large Hispanic/Latin American section with smaller Asian and Indian sections.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="harvest market (niemann foods) chain / warehouse chain / warehouse 2029 s neil st, champaign 61820 specialty and imported groceries, including halal meat and prepared produce. none ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Harvest Market (Niemann Foods)</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=2029%20S%20Neil%20St%2C%20Champaign%2061820" target="_blank" rel="noopener">2029 S Neil St, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173557878">(217) 355-7878</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 6:00-22:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Specialty and imported groceries, including halal meat and prepared produce.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="schnucks urbana chain / warehouse chain / warehouse 200 n vine st, urbana 61802 international aisle with hispanic, asian and kosher products, plus imported cheeses and european confectionery. none (free rewards card optional) ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Schnucks Urbana</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=200%20N%20Vine%20St%2C%20Urbana%2061802" target="_blank" rel="noopener">200 N Vine St, Urbana 61802</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173376016">(217) 337-6016</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 6:00-22:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>International aisle with Hispanic, Asian and kosher products, plus imported cheeses and European confectionery.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None (free rewards card optional)</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="niemanns (campustown) chain / warehouse chain / warehouse 331 e stoughton st, champaign 61820 campus-focused grocery with instant noodles, asian sauces, sushi and hispanic staples. none ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Niemanns (Campustown)</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=331%20E%20Stoughton%20St%2C%20Champaign%2061820" target="_blank" rel="noopener">331 E Stoughton St, Champaign 61820</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+12173524123">(217) 352-4123</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 7:00-23:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Campus-focused grocery with instant noodles, Asian sauces, sushi and Hispanic staples.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="aldi - champaign chain / warehouse chain / warehouse 801 interstate dr, champaign 61822 rotating german and european imports, plus a smaller selection of hispanic and asian groceries. none (charges for carrier bags) ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Aldi - Champaign</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=801%20Interstate%20Dr%2C%20Champaign%2061822" target="_blank" rel="noopener">801 Interstate Dr, Champaign 61822</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd>Not listed</dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 8:30-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Rotating German and European imports, plus a smaller selection of Hispanic and Asian groceries.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None (charges for carrier bags)</div>
-      
-    </article>
-    
-    <article class="store-card" data-region="Chain / Warehouse" data-type="Chain / warehouse" data-search="aldi - urbana chain / warehouse chain / warehouse 3102 e university ave, urbana 61802 rotating german and european imports, plus a smaller selection of hispanic and asian groceries. none (charges for carrier bags) ">
-      <div class="card-top">
-        <div>
-          <span class="region-badge">Chain / Warehouse</span>
-          <h3>Aldi - Urbana</h3>
-        </div>
-        <span class="type-label">Chain / warehouse</span>
-      </div>
-
-      <dl class="store-facts">
-        <div>
-          <dt>Address</dt>
-          <dd><a href="https://www.google.com/maps/search/?api=1&query=3102%20E%20University%20Ave%2C%20Urbana%2061802" target="_blank" rel="noopener">3102 E University Ave, Urbana 61802</a></dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd>Not listed</dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Daily 9:00-20:00</dd>
-        </div>
-        <div>
-          <dt>What you'll find</dt>
-          <dd>Rotating German and European imports, plus a smaller selection of Hispanic and Asian groceries.</dd>
-        </div>
-      </dl>
-
-      <div class="membership">None (charges for carrier bags)</div>
-      
-    </article>
-    
-  </div>
-
-  <div id="empty" class="empty">No stores match those filters.</div>
-
-  <p class="directory-note">Hours and inventory can change. If you are looking for a specific ingredient, call the store before making a special trip.</p>
 </main>
-
 <footer>
-  <p>International Chemists Association · Department of Chemistry · University of Illinois Urbana-Champaign</p>
+<p>International Chemists Association · Department of Chemistry · University of Illinois Urbana-Champaign</p>
 </footer>
-
 <script>
 const searchInput = document.getElementById('search');
 const regionFilter = document.getElementById('region-filter');
@@ -1429,6 +1222,5 @@ searchInput.addEventListener('input', applyFilters);
 regionFilter.addEventListener('change', applyFilters);
 typeFilter.addEventListener('change', applyFilters);
 </script>
-
 </body>
 </html>
